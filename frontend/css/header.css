@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: lightgray;
+  justify-content: space-between;
+  height: 75px;
+  padding: 20px;
+}
+
+.nav-bar {
+  align-items: center;
+  outline: solid red;
+  display: flex;
+  list-style-type: none;
+  gap: 25px;
+  height: 100%;
+}
+
+.nav-bar ul {
+  display: flex;
+  list-style-type: none;
+  gap: 25px;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
