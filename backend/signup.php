@@ -23,9 +23,10 @@
 
  if($resultado==0){
     $registro=mysqli_query($conexion, "INSERT INTO usuarios (usuario, email, contrasenia) VALUES ('$usuario', '$email', '$passwordEncriptada')");
-    $consulta=mysqli_query($conexion, "SELECT usuario, email FROM usuarios WHERE email='$email'");
+    $consulta=mysqli_query($conexion, "SELECT usuario, id, email FROM usuarios WHERE email='$email'");
     $respuesta=mysqli_fetch_assoc($consulta);
     $_SESSION['usuario']=$respuesta['usuario'];
+    $_SESSION['id']=$respuesta['id'];
     $_SESSION['logeado']=true;
     mysqli_free_result($consulta);
     header("location:../frontend/index.php");

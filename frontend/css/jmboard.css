@@ -6,11 +6,25 @@
   align-self: center;
   min-height: 250px;
   height: auto;
+  display: flex;
+  flex-direction: column;
 }
 .tablas {
   display: flex;
   padding: 10px;
   gap: 10px;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.tabla-container{
+  display: flex;
+  flex-direction: row;
+  min-width: 240px;
+  min-height: 80px; 
+  outline: solid gray;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
 }
 .tabla {
   display: flex;
@@ -19,9 +33,6 @@
   justify-content: space-between;
   padding: 10px;
   text-align: start;
-  min-width: 240px;
-  min-height: 80px;
-  outline: solid gray;
   flex-wrap: wrap;
 }
 
