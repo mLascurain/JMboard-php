@@ -1,0 +1,32 @@
+.tablero {
+  margin-top: 50px;
+  outline: solid red;
+  width: 90%;
+  justify-self: center;
+  align-self: center;
+  min-height: 250px;
+  height: auto;
+}
+.tablas {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+}
+.tabla {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-between;
+  padding: 10px;
+  text-align: start;
+  min-width: 240px;
+  min-height: 80px;
+  outline: solid gray;
+  flex-wrap: wrap;
+}
+
+.tabla h3 {
+  text-wrap: wrap;
+
+  max-width: 200px;
+}
