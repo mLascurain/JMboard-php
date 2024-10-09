@@ -16,7 +16,7 @@
  $password=$_POST['password'];
  include("conexion.php");
 
- $consulta=mysqli_query($conexion, "SELECT usuario, email, contrasenia FROM usuarios WHERE email='$email'");
+ $consulta=mysqli_query($conexion, "SELECT id,usuario, email, contrasenia FROM usuarios WHERE email='$email'");
  
  $resultado=mysqli_num_rows($consulta);
 
@@ -26,6 +26,7 @@
     if(password_verify($password, $respuesta['contrasenia'])){
       $_SESSION['usuario']=$respuesta['usuario'];
       $_SESSION['logeado']=true;
+      $_SESSION['id']=$respuesta['id'];
       mysqli_free_result($consulta);
       header("location:../frontend/index.php");
       }

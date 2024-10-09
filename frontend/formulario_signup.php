@@ -15,7 +15,7 @@
         <h2 class="title-form">Registrarse</h2>
         <form action="../backend/signup.php" method="post" class="form-login">
         <label>Nombre de usuario
-        	<input name="usuario" type="text" maxlength="30" />
+        	<input name="usuario" required type="text" maxlength="30" />
         </label>
         <label>Mail
         	<input name="email" type="email" maxlength="30" />
@@ -31,9 +31,8 @@
             <p style="color: red;"><?php echo $_SESSION['error']; ?></p>
             <?php unset($_SESSION['error']); ?>
         <?php endif; ?>
-
+        
     </article>
-
     <?php include("layout/footer.php"); ?>
 </body>
 </html>
