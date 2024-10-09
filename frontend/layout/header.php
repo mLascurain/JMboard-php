@@ -9,8 +9,6 @@
 </head>
 <body>
     <header class="header">
-        
-        
         <div class="nav-bar">
             <h1>JMboard</h1>
             <nav>
@@ -21,8 +19,13 @@
             </nav>
         </div>
         <div class="login">
-            <a href="formulario_login.php">Iniciar Sesion</a>
-            <i class="bi bi-person-circle"></i>
+            <?php if (isset($_SESSION['logeado']) && ($_SESSION['logeado'])==true): ?>
+                <a href="../backend/logout.php">Cerrar Sesion</a>
+                <i class="bi bi-person-circle"></i>
+            <?php else: ?>
+                <a href="../frontend/formulario_login.php">Iniciar Sesion</a>
+                <i class="bi bi-person-circle"></i>
+            <?php endif; ?>
         </div>
     </header>
 </body>

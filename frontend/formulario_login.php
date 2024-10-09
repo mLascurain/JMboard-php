@@ -9,28 +9,31 @@
     <title>Iniciar Sesion</title>
 </head>
 <body>
-    <?php include("layout/header.php");?>
-    
+    <?php include("layout/header.php"); ?>
     <article class="article-form-login">
         <h2 class="title-form">Iniciar Sesion</h2>
+        <div>
+            <a href="../frontend/index.php">
+                <button class="btn-inicio">Inicio</button>
+            </a>
+        </div>
         <form action="../backend/login.php" method="post" class="form-login">
-        <label>Nombre de usuario
-        	<input name="email" type="text" maxlength="30" />
-        </label>
-        <label>Contraseña
-        	<input type="password" name="password" maxlength="12" />
-        </label>
-        	<input type="submit" value="Login"/>
-        <a href="formulario_signup.php">Registrarse</a>	
+            <label>E-mail
+        	    <input name="email" type="email" maxlength="30" />
+            </label>
+            <label>Contraseña
+        	    <input type="password" name="password" maxlength="12" />
+            </label>
+            <input class="btn-login" type="submit" value="Login"/>
+            <a href="formulario_signup.php">Registrarse</a>	
         </form>
         
-
         <?php if (isset($_SESSION['error'])): ?>
-            <p style="color: red;"><?php echo $_SESSION['error']; ?></p>
+            <p style="color: red;"> <?php echo $_SESSION['error']; ?> </p>
             <?php unset($_SESSION['error']); ?>
         <?php endif; ?>
-    </article>
 
+    </article>
     <?php include("layout/footer.php"); ?>
 </body>
 </html>

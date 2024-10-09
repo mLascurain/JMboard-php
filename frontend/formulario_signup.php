@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,14 +18,20 @@
         	<input name="usuario" type="text" maxlength="30" />
         </label>
         <label>Mail
-        	<input name="email" type="text" maxlength="30" />
+        	<input name="email" type="email" maxlength="30" />
         </label>
         <label>Contraseña
-        	<input type="password" name="password" maxlength="12" />
+        	<input type="password" name="password" minlength="6" maxlength="12" />
         </label>
         	<input type="submit" value="Registrarse"/>
         <a href="formulario_login.php">Iniciar Sesion</a>	
         </form>
+
+        <?php if (isset($_SESSION['error'])): ?>
+            <p style="color: red;"><?php echo $_SESSION['error']; ?></p>
+            <?php unset($_SESSION['error']); ?>
+        <?php endif; ?>
+
     </article>
 
     <?php include("layout/footer.php"); ?>
