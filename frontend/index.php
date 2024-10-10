@@ -14,10 +14,8 @@
     if (isset($_SESSION['logeado']) && ($_SESSION['logeado'])==true) {
         include("layout/jmboard.php");
     } else {
-        echo 'hola';
+        include("layout/index_menu.php");
     }
-
-    
     include("layout/footer.php"); 
     ?>
 </body>
