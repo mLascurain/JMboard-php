@@ -34,9 +34,10 @@
         <?php 
             for ($i=0; $i < $resultado; $i++) { 
                 $respuesta=mysqli_fetch_assoc($consulta);
+                $_SESSION['id_tablero']=$respuesta['id'];
                 echo"
                     <div class='tabla-container'>
-                        <a href='../frontend/formulario_login.php'>
+                        <a href='../frontend/kanbanboard.php'>
                         <div class='tabla'>
                             <h3>$respuesta[nombre]</h3>
                             <p>$respuesta[fecha_creacion]</p>

@@ -1,0 +1,39 @@
+.columnas {
+  width: 100%;
+  outline: solid green;
+  display: flex;
+  flex-direction: row;
+  padding: 25px;
+  gap: 25px;
+  justify-content: start;
+}
+.columna {
+  width: fit-content;
+  outline: solid red;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 15px;
+  min-width: 250px;
+  min-height: 350px;
+}
+.columnas-container {
+  display: flex;
+  outline: solid black;
+  width: fit-content;
+  flex-direction: column;
+}
+
+.tareas-container {
+  outline: solid yellow;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+  gap: 10px;
+}
+.tarea {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  outline: solid blue;
+}
