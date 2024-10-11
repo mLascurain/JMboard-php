@@ -5,6 +5,8 @@
   padding: 25px;
   gap: 25px;
   justify-content: start;
+  overflow: auto;
+  padding-bottom: 35px;
 }
 .columna {
   width: fit-content;
@@ -14,6 +16,8 @@
   gap: 15px;
   min-width: 250px;
   min-height: 350px;
+  align-items: center;
+  border: 2px solid #a355df;
 }
 .columnas-container {
   display: flex;
@@ -27,10 +31,14 @@
   padding: 10px;
   flex-direction: column;
   gap: 10px;
+  justify-content: center;
 }
 .tarea {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  outline: solid blue;
+  background: #1b1b1b;
+  padding: 15px;
+  gap: 10px;
+  width: 200px;
 }
