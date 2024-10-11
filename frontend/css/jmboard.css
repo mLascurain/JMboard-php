@@ -1,6 +1,5 @@
 .tablero {
   margin-top: 50px;
-  outline: solid red;
   width: 90%;
   justify-self: center;
   align-self: center;
@@ -8,6 +7,8 @@
   height: auto;
   display: flex;
   flex-direction: column;
+  outline: 2px solid #a355df;
+  padding: 10px;
 }
 .tablas {
   display: flex;
@@ -16,15 +17,16 @@
   flex-wrap: wrap;
   flex-direction: column;
 }
-.tabla-container{
+.tabla-container {
   display: flex;
   flex-direction: row;
   min-width: 240px;
-  min-height: 80px; 
-  outline: solid gray;
+  min-height: 80px;
   justify-content: space-between;
   padding: 10px;
   align-items: center;
+  outline: 2px solid #aaaaaa;
+  margin: 10px;
 }
 .tabla {
   display: flex;

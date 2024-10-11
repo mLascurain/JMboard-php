@@ -1,6 +1,5 @@
 .columnas {
   width: 100%;
-  outline: solid green;
   display: flex;
   flex-direction: row;
   padding: 25px;
@@ -9,7 +8,6 @@
 }
 .columna {
   width: fit-content;
-  outline: solid red;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -25,7 +23,6 @@
 }
 
 .tareas-container {
-  outline: solid yellow;
   display: flex;
   padding: 10px;
   flex-direction: column;

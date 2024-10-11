@@ -7,10 +7,12 @@
 .header {
   display: flex;
   justify-content: space-between;
-  background-color: lightgray;
+  background-color: #1b1b1b;
+  color: #ffffff;
   justify-content: space-between;
   height: 75px;
   padding: 20px;
+  border-bottom: solid 2px #a355fd;
 }
 
 .nav-bar {
@@ -27,9 +29,23 @@
   gap: 25px;
 }
 
+.nav-bar a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 .login {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 25;
+}
+
+.login a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.login i {
+  padding-left: 8px;
 }
