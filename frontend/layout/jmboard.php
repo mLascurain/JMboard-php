@@ -37,7 +37,7 @@
                 $_SESSION['id_tablero']=$respuesta['id'];
                 echo"
                     <div class='tabla-container'>
-                        <a href='../frontend/kanbanboard.php'>
+                        <a href='../frontend/kanbanboard.php?id=$respuesta[id]'>
                         <div class='tabla'>
                             <h3>$respuesta[nombre]</h3>
                             <p>$respuesta[fecha_creacion]</p>

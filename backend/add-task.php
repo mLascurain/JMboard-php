@@ -3,16 +3,17 @@
 include("../backend/conexion.php");
 $titulo = $_POST['add-task'];
 $columna_id = $_POST['id-columna'];
+$id_tablero = $_POST['id-tablero'];
 if (empty($columna_id)) {
     echo "Error: el id de la columna es requerido.";
     exit;
 }
-$id = $_SESSION['id'];
+
+echo $columna_id;
 $fechaActual = new DateTime();
 $fechaFormateada = $fechaActual->format('Y-m-d');
 
-$consulta = mysqli_query($conexion, "INSERT INTO tareas ( id, titulo, descripcion, columna_id, estado, fecha_creacion ) VALUES ('$id', '$titulo', '', '1', 'pendiente', '$fechaFormateada')");
+$consulta = mysqli_query($conexion, "INSERT INTO tareas ( titulo, descripcion, columna_id, estado, fecha_creacion ) VALUES ( '$titulo', '', '$columna_id', '1', '$fechaFormateada')");
+header("location:../frontend/kanbanboard.php?id=$id_tablero");
 
-header("location:kanbanboard.php");
-mysquli_free_result($consulta);
 ?>
