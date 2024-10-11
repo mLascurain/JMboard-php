@@ -11,7 +11,9 @@ if (empty($nombre)) {
     echo "Error: el nombre de la columna es requerido.";
     exit;
 }
-$tablero_id = $_POST['id-tablero'];
+$tablero_id = $_POST['id_tablero'];
+echo $tablero_id;
+
 if (empty($tablero_id)) {
     echo "Error: el id del tablero es requerido.";
     exit;
@@ -26,7 +28,7 @@ $fechaActual = new DateTime();
 $fechaFormateada = $fechaActual->format('Y-m-d');
 $orden = 1;
 
-$consulta = mysqli_query($conexion, "INSERT INTO columnas ( id, nombre, tablero_id, orden, fecha_creacion ) VALUES ('$id', '$nombre', '$tablero_id', '$orden', '$fechaFormateada')");
-header("location:../frontend/kanbanboard.php");
-mysquli_free_result($consulta);
+$consulta= mysqli_query($conexion, "INSERT INTO columnas ( nombre, tablero_id, orden, fecha_creacion ) VALUES ( '$nombre', '$tablero_id', '$orden', '$fechaFormateada')");
+
+header("location:../frontend/kanbanboard.php?id=$tablero_id");
 ?>
