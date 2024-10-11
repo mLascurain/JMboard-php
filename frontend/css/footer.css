@@ -1,5 +1,6 @@
 .footer {
-  background-color: lightgray;
+  background-color: #1b1b1b;
+  color: #ffffff;
   display: flex;
   justify-content: space-between;
   align-items: center;
