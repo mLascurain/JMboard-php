@@ -54,7 +54,7 @@
 }
 .tarea {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   background: #2b2b2b;
   padding: 15px;
@@ -68,6 +68,40 @@
 .tarea:hover{
   border: solid 1px #a355df;
 }
+
+.tarea form {
+  align-items: center;
+  display: flex;
+}
+.tarea span{
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-remove-task{
+  border-style: none;
+  font-weight: bolder;
+  background-color: transparent;
+  color: white;
+  font-size: 20px;
+  transition: 0.1s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-remove-task:hover{
+  color:rgb(230, 0, 0);
+}
+
+.btn-remove-col{
+  background-color: transparent;
+  border-style: none;
+  color: white;
+  transition: 0.1s;
+}
+
+.btn-remove-col:hover{color:rgb(167, 0, 0);}
+
 
 .add-column{
   display: flex;
