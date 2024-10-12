@@ -31,6 +31,5 @@
         <?php endif; ?>
         
     </article>
-    <?php include("layout/footer.php"); ?>
 </body>
 </html>

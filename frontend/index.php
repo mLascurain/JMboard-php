@@ -16,7 +16,6 @@
     } else {
         include("layout/index_menu.php");
     }
-    include("layout/footer.php"); 
     ?>
 </body>
 </html>
