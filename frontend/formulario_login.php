@@ -9,15 +9,11 @@
     <title>Iniciar Sesion</title>
 </head>
 <body>
-    <?php include("layout/header.php"); ?>
+
+
     <article class="article-form-login">
-        <div>
-            <h2 class="title-form">Iniciar Sesion</h2>
-            <div>
-                <a href="../frontend/index.php">
-                    <button class="btn-inicio">Inicio</button>
-                </a>
-            </div>
+        <div class="div-form-login">
+            <h1 class="title-form">Iniciar Sesion</h1>
             <form action="../backend/login.php" method="post" class="form-login">
                 <label>E-mail
                     <input name="email" type="email" maxlength="30" />
@@ -25,7 +21,7 @@
                 <label>Contraseña
                     <input type="password" name="password" maxlength="12" />
                 </label>
-                <input class="btn-login" type="submit" value="Login"/>
+                <input class="btn-login" id="btn-login" type="submit" value="Login"/>
                 <a class="register" href="formulario_signup.php">Registrarse</a>	
             </form>
             

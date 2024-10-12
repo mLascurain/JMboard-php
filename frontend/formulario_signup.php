@@ -9,9 +9,7 @@
     <title>Registro de Usuario</title>
 </head>
 <body>
-    <?php include("layout/header.php");?>
-    
-    <article class="article-form-login">    
+    <article class="article-form-signup">
         <h2 class="title-form">Registrarse</h2>
         <form action="../backend/signup.php" method="post" class="form-login">
         <label>Nombre de usuario
@@ -23,8 +21,8 @@
         <label>Contraseña
         	<input type="password" name="password" minlength="6" maxlength="12" />
         </label>
-        	<input type="submit" value="Registrarse"/>
-        <a href="formulario_login.php">Iniciar Sesion</a>	
+        	<input id="btn-signup" type="submit" value="Registrarse"/>
+            <a class="register" href="formulario_login.php">Iniciar Sesion</a>	
         </form>
 
         <?php if (isset($_SESSION['error'])): ?>
