@@ -19,6 +19,16 @@
   align-items: center;
   border: 2px solid #a355df;
 }
+
+.columna span {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px;
+  align-items: center;
+}
+
 .columnas-container {
   display: flex;
   outline: solid black;
