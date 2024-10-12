@@ -1,15 +1,64 @@
+
+.user-name{
+}
+.create-board-section{
+  margin-top: 10px;
+  width: 100%;
+}
+
+.create-board-section form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+#name-new-table{
+  background-color: #2a2a2a;
+  border-radius: 4px;
+  border-style: none;
+  color: lightgrey;
+  padding: 5px;
+  width: fit-content;
+}
+
+#btn-new-table{
+  width: fit-content;
+  background-color: #6a0dad;
+  color: white; 
+  padding: 12px 24px; 
+  font-size: 16px; 
+  border: none; 
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+#btn-new-table:hover{  
+  background-color: #a355df; /* Color púrpura más claro al hacer hover */
+  transform: translateY(-2px); 
+}
+
+#btn-new-table:active{
+  background-color: #5a0891;
+  transform: translateY(1px);
+}
+
 .tablero {
   margin-top: 50px;
   width: 90%;
   justify-self: center;
+  border-radius: 10px;
   align-self: center;
   min-height: 250px;
   height: auto;
+  background-color: #1b1b1b;
   display: flex;
   flex-direction: column;
   outline: 2px solid #a355df;
   padding: 10px;
 }
+
 .tablas {
   display: flex;
   padding: 10px;
@@ -17,6 +66,8 @@
   flex-wrap: wrap;
   flex-direction: column;
 }
+
+
 .tabla-container {
   display: flex;
   flex-direction: row;
@@ -25,21 +76,25 @@
   justify-content: space-between;
   padding: 10px;
   align-items: center;
-  outline: 2px solid #aaaaaa;
+  background-color: #2a2a2a;
+  border-radius: 10px;
+  outline: solid 2px #a355df;
+  transition: 0.2s;
   margin: 10px;
 }
-.tabla {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: space-between;
-  padding: 10px;
-  text-align: start;
-  flex-wrap: wrap;
+.tabla-container:hover {
+  transform: scale(1.01);
 }
 
-.tabla h3 {
-  text-wrap: wrap;
-
-  max-width: 200px;
+.tabla {
+  display: flex;
+  color: white;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: dashed;
+  padding: 10px;
+  width: 90%;
+  text-align: start;
+  flex-wrap: wrap;
 }
