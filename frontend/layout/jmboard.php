@@ -35,7 +35,7 @@
                     $respuesta=mysqli_fetch_assoc($consulta);
                     $_SESSION['id_tablero']=$respuesta['id'];
                     echo"
-                    <a class='table-link' href='../frontend/kanbanboard.php?id=$respuesta[id]'>
+                    <a class='table-link' href='../frontend/kanbanboard.php?id=$respuesta[id]&name=$respuesta[nombre]'>
                         <div class='tabla-container'>
                             <div class='tabla'> 
                                 <h3 id='table-name'> $respuesta[nombre]</h3>

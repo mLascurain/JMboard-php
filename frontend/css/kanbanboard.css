@@ -10,10 +10,10 @@
   padding-bottom: 35px;
 }
 .columna {
-  width: fit-content;
+  width: auto;
   display: flex;
   flex-direction: column;
-  justify-content: space-between  ;
+  justify-content: space-between;
   border-radius: 10px;
   padding: 10px;
   gap: 15px;
@@ -24,8 +24,10 @@
   background-color: #1b1b1b;
 }
 
-.columna span {
+.tarea-header {
   display: flex;
+  flex-wrap: wrap;
+  text-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
@@ -39,7 +41,7 @@
   flex-direction: column;
 }
 
-.tareas{
+.tareas {
   width: 100%;
 }
 .tareas-container {
@@ -65,7 +67,7 @@
   border: solid 1px lightgray;
 }
 
-.tarea:hover{
+.tarea:hover {
   border: solid 1px #a355df;
 }
 
@@ -73,12 +75,12 @@
   align-items: center;
   display: flex;
 }
-.tarea span{
+.tarea span {
   display: flex;
   flex-direction: column;
 }
 
-.btn-remove-task{
+.btn-remove-task {
   border-style: none;
   font-weight: bolder;
   background-color: transparent;
@@ -89,33 +91,34 @@
   border-radius: 5px;
 }
 
-.btn-remove-task:hover{
-  color:rgb(230, 0, 0);
+.btn-remove-task:hover {
+  color: rgb(230, 0, 0);
 }
 
-.btn-remove-col{
+.btn-remove-col {
   background-color: transparent;
   border-style: none;
   color: white;
   transition: 0.1s;
 }
 
-.btn-remove-col:hover{color:rgb(167, 0, 0);}
+.btn-remove-col:hover {
+  color: rgb(167, 0, 0);
+}
 
-
-.add-column{
+.add-column {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.add-column form{
+.add-column form {
   display: flex;
   gap: 5px;
   align-items: center;
   justify-content: space-between;
 }
-#name-new-column{
+#name-new-column {
   background-color: #1b1b1b;
   border-radius: 4px;
   border-style: none;
@@ -125,36 +128,36 @@
   height: fit-content;
 }
 
-#btn-new-column{
+#btn-new-column {
   display: flex;
   width: 20px;
   height: 30px;
   justify-content: center;
   align-items: center;
   background-color: #6a0dad;
-  color: white; 
-  border: none; 
+  color: white;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease; 
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.add-task{
+.add-task {
   margin-bottom: 5px;
 }
 
-#no-tasks{
+#no-tasks {
   color: rgba(136, 136, 136, 0.5);
   text-align: center;
 }
 
-.add-task form{
+.add-task form {
   display: flex;
   gap: 10px;
   width: 100%;
 }
 
-#name-new-task{
+#name-new-task {
   background-color: #2b2b2b;
   border-radius: 4px;
   border-style: none;
@@ -164,19 +167,18 @@
   height: fit-content;
 }
 
-#btn-new-task{
+#btn-new-task {
   display: flex;
   justify-content: center;
   align-items: center;
   width: fit-content;
   background-color: #6a0dad;
-  color: white; 
-  padding: 5px;  
+  color: white;
+  padding: 5px;
   font-size: 16px;
-  border: none; 
+  border: none;
   height: fit-content;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease; 
-
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }

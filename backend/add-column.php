@@ -5,6 +5,7 @@ if (!$conexion) {
     echo "Error: no se puedo conectar al servidor.";
     exit;
 }
+$nombre_tablero = $_POST['nombre-tablero'];
 
 $nombre = $_POST['add-column'];
 if (empty($nombre)) {
@@ -30,5 +31,5 @@ $orden = 1;
 
 $consulta= mysqli_query($conexion, "INSERT INTO columnas ( nombre, tablero_id, orden, fecha_creacion ) VALUES ( '$nombre', '$tablero_id', '$orden', '$fechaFormateada')");
 
-header("location:../frontend/kanbanboard.php?id=$tablero_id");
+header("location:../frontend/kanbanboard.php?id=$tablero_id&name=$nombre_tablero");
 ?>
