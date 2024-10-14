@@ -19,7 +19,7 @@
     $consultaColumnas = mysqli_query($conexion, "SELECT id, nombre, fecha_creacion FROM columnas WHERE columnas.tablero_id = $id_tablero");
     $resultadoColumnas = mysqli_num_rows($consultaColumnas);
     ?>
-    <H1><?php echo $nombre_tablero ?></H1>
+    <H1 class='title-board'><?php echo $nombre_tablero ?></H1>
     <div class='columnas'>
         <?php
             for ($i=0; $i < $resultadoColumnas; $i++) {
@@ -29,7 +29,7 @@
                 $resultadoTareas = mysqli_num_rows($consultaTareas);
                 echo"
                     <div class='columna'>
-                            <span>
+                            <span class='titulo-columna'>
                                 <h2>$respuestaColumnas[nombre]</h2>
                                 <form action='../backend/remove-column.php' method='post'>
                                 <input type='hidden' name='nombre-tablero' value='$nombre_tablero'>
@@ -50,8 +50,7 @@
                                             $respuestaTareas = mysqli_fetch_assoc($consultaTareas);
                                             echo"
                                                 <div class='tarea'>
-
-                                                    <div class='tarea-header'>
+                                                    <div id='nombre-tarea'>
                                                         <p>$respuestaTareas[titulo]</p>
                                                         <p>$respuestaTareas[fecha_creacion]</p>
                                                     </div>
