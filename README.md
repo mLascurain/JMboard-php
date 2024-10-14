@@ -2,6 +2,9 @@
 
 App to organize tasks
 
+![logo](https://github.com/user-attachments/assets/ff0352bc-8120-4693-8ec5-89d6f786b493)
+
+
 <strong> Currently in active development.</strong>
 
 > [!TIP]  
