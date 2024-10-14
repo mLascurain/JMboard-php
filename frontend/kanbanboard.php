@@ -14,10 +14,12 @@
     <?php
     include("../backend/conexion.php");
     $id_tablero = $_GET['id'];
+    $nombre_tablero = $_GET['name'];
     //Consulta de conexion con las tablas
     $consultaColumnas = mysqli_query($conexion, "SELECT id, nombre, fecha_creacion FROM columnas WHERE columnas.tablero_id = $id_tablero");
     $resultadoColumnas = mysqli_num_rows($consultaColumnas);
     ?>
+    <H1><?php echo $nombre_tablero ?></H1>
     <div class='columnas'>
         <?php
             for ($i=0; $i < $resultadoColumnas; $i++) {
@@ -30,6 +32,7 @@
                             <span>
                                 <h2>$respuestaColumnas[nombre]</h2>
                                 <form action='../backend/remove-column.php' method='post'>
+                                <input type='hidden' name='nombre-tablero' value='$nombre_tablero'>
                                 <input type='hidden' name='id' value='$respuestaColumnas[id]'>
                                 <input type='hidden' name='id_tablero' value='$id_tablero'>
                                     <button class='btn-remove-col'>
@@ -47,15 +50,15 @@
                                             $respuestaTareas = mysqli_fetch_assoc($consultaTareas);
                                             echo"
                                                 <div class='tarea'>
-                                                    <span>
-                                                        <p><strong>$respuestaTareas[titulo]</strong></p>
+
+                                                    <div class='tarea-header'>
+                                                        <p>$respuestaTareas[titulo]</p>
                                                         <p>$respuestaTareas[fecha_creacion]</p>
-                                                        
-                                                    </span>
-                                                    
+                                                    </div>
                                                     <form action='../backend/remove-task.php' method='post'>
                                                         <input type='hidden' name='id' value='$respuestaTareas[id]'>
                                                         <input type='hidden' name='id_tablero' value='$id_tablero'>
+                                                        <input type='hidden' name='nombre-tablero' value='$nombre_tablero'>
                                                         <button class='btn-remove-task'>
                                                             <i class='bi bi-dash-circle'></i>
                                                         </button>
@@ -76,6 +79,7 @@
                                     <form action='../backend/add-task.php' method='post'>
                                         <input id="name-new-task" name="add-task" placeholder="Titulo de la tarea" type="text" maxlength="30" />
                                         <input type="hidden" name="id-columna" value="<?php echo $id_columna; ?>">
+                                        <input type="hidden" name="nombre-tablero" value="<?php echo $nombre_tablero; ?>">
                                         <input type="hidden" name="id-tablero" value="<?php echo $id_tablero; ?>">
                                         <input id="btn-new-task" type='submit' value='+'>
                                     </form>
@@ -89,6 +93,7 @@
         <div class='add-column'>
             <form action='../backend/add-column.php' method='post'>
                 <input id="name-new-column" name="add-column" placeholder="Titulo de la columna" required type="text" maxlength="30" />
+                <input type="hidden" name="nombre-tablero" value="<?php echo $nombre_tablero; ?>">
                 <input type="hidden" name="id_tablero" value="<?php echo $id_tablero; ?>">
                 <input id="btn-new-column" type='submit' value='+'>
             </form>

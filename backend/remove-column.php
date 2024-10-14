@@ -2,6 +2,7 @@
 <?php
 include("../backend/conexion.php");
 $id_columna = $_POST['id'];
+$nombre_tablero = $_POST['nombre-tablero'];
 $consulta = "SELECT COUNT(*) AS num_tareas FROM tareas WHERE columna_id = '$id_columna'";
 $resultado = mysqli_query($conexion, $consulta);
 $num_tareas = mysqli_fetch_assoc($resultado)['num_tareas'];
@@ -24,7 +25,7 @@ mysqli_query($conexion, $consulta);
 
 // Redirigir a index.php
 $id_tablero = $_POST['id_tablero'];
-header("Location: ../frontend/kanbanboard.php?id=$id_tablero");
+header("Location: ../frontend/kanbanboard.php?id=$id_tablero&name=$nombre_tablero");
 mysqli_close($conexion); // Cierra la conexión con la base de datos
 exit;
 ?>
