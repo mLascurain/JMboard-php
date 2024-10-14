@@ -25,7 +25,7 @@
             for ($i=0; $i < $resultadoColumnas; $i++) {
                 $respuestaColumnas = mysqli_fetch_assoc($consultaColumnas);
                 $id_columna = $respuestaColumnas['id'];
-                $consultaTareas = mysqli_query($conexion, "SELECT id, titulo, estado,descripcion, fecha_creacion FROM tareas WHERE tareas.columna_id = $respuestaColumnas[id]");
+                $consultaTareas = mysqli_query($conexion, "SELECT id, titulo, prioridad,descripcion, fecha_creacion FROM tareas WHERE tareas.columna_id = $respuestaColumnas[id]");
                 $resultadoTareas = mysqli_num_rows($consultaTareas);
                 echo"
                     <div class='columna'>
@@ -53,6 +53,35 @@
                                                     <div id='nombre-tarea'>
                                                         <p>$respuestaTareas[titulo]</p>
                                                         <p>$respuestaTareas[fecha_creacion]</p>
+                                                        <p>Prioridad: $respuestaTareas[prioridad]</p>
+                                                        <form class='form-priority' action='../backend/mod-priority.php' method='post'>
+                                                            <select class='select-priority' name='prioridad'>";
+                                                            if($respuestaTareas['prioridad'] == 1){
+                                                                echo" 
+                                                                <option value='1' selected>Baja</option>
+                                                                <option value='2'>Media</option>
+                                                                <option value='3'>Alta</option>
+                                                                ";
+                                                            }else if($respuestaTareas['prioridad'] == 2){
+                                                                echo "
+                                                                <option value='1'>Baja</option>
+                                                                <option value='2' selected>Media</option>
+                                                                <option value='3'>Alta</option>
+                                                                ";
+                                                            }else if($respuestaTareas['prioridad'] == 3){
+                                                                echo "
+                                                                <option value='1'>Baja</option>
+                                                                <option value='2'>Media</option>
+                                                                <option value='3' selected>Alta</option>
+                                                                ";
+                                                            }
+                                                        echo"
+                                                            </select>
+                                                            <input type='hidden' name='id_tarea' value='$respuestaTareas[id]'>
+                                                            <input type='hidden' name='id_tablero' value='$id_tablero'>
+                                                            <input type='hidden' name='nombre-tablero' value='$nombre_tablero'>
+                                                            <input type='submit'value='Guardar'>
+                                                        </form>
                                                     </div>
                                                     <form action='../backend/remove-task.php' method='post'>
                                                         <input type='hidden' name='id' value='$respuestaTareas[id]'>
@@ -98,5 +127,10 @@
             </form>
         </div>
     </div>
+    <script>
+        document.getElementByClassName("select-priority").addEventListener("change", function() {
+            document.getElementByClassName("form-priority").submit();
+        });
+    </script>
 </body>
 </html>
