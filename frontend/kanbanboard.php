@@ -13,8 +13,10 @@
     <?php include("layout/header.php");?>
     <?php
     include("../backend/conexion.php");
-    $id_tablero = $_GET['id'];
-    $nombre_tablero = $_GET['name'];
+    $id_tablero = $_GET['id']; //Obtiene el id del tablero
+    $nombre_tablero = $_GET['name']; //Obtiene el nombre del tablero
+    $tasks = array(); //Se genera un Array para almacenar las tareas
+    
     //Consulta de conexion con las tablas
     $consultaColumnas = mysqli_query($conexion, "SELECT id, nombre, fecha_creacion FROM columnas WHERE columnas.tablero_id = $id_tablero");
     $resultadoColumnas = mysqli_num_rows($consultaColumnas);
@@ -25,7 +27,7 @@
             for ($i=0; $i < $resultadoColumnas; $i++) {
                 $respuestaColumnas = mysqli_fetch_assoc($consultaColumnas);
                 $id_columna = $respuestaColumnas['id'];
-                $consultaTareas = mysqli_query($conexion, "SELECT id, titulo, prioridad,descripcion, fecha_creacion FROM tareas WHERE tareas.columna_id = $respuestaColumnas[id]");
+                $consultaTareas = mysqli_query($conexion, "SELECT id, titulo, prioridad,descripcion, columna_id, fecha_creacion FROM tareas WHERE tareas.columna_id = $respuestaColumnas[id]");
                 $resultadoTareas = mysqli_num_rows($consultaTareas);
                 echo"
                     <div class='columna'>
@@ -47,54 +49,76 @@
                                     if($resultadoTareas>0)
                                     {
                                         for ($j=0; $j < $resultadoTareas; $j++) {
-                                            $respuestaTareas = mysqli_fetch_assoc($consultaTareas);
+                                            $actualTask = mysqli_fetch_assoc($consultaTareas);
+    
                                             echo"
-                                                <div class='tarea'>
-                                                    <div id='nombre-tarea'>
-                                                        <p>$respuestaTareas[titulo]</p>
-                                                        <p>$respuestaTareas[fecha_creacion]</p>
-                                                        <p>Prioridad: $respuestaTareas[prioridad]</p>
-                                                        <form class='form-priority' action='../backend/mod-priority.php' method='post'>
-                                                            <select class='select-priority' name='prioridad'>";
-                                                            if($respuestaTareas['prioridad'] == 1){
-                                                                echo" 
-                                                                <option value='1' selected>Baja</option>
-                                                                <option value='2'>Media</option>
-                                                                <option value='3'>Alta</option>
-                                                                ";
-                                                            }else if($respuestaTareas['prioridad'] == 2){
-                                                                echo "
-                                                                <option value='1'>Baja</option>
-                                                                <option value='2' selected>Media</option>
-                                                                <option value='3'>Alta</option>
-                                                                ";
-                                                            }else if($respuestaTareas['prioridad'] == 3){
-                                                                echo "
-                                                                <option value='1'>Baja</option>
-                                                                <option value='2'>Media</option>
-                                                                <option value='3' selected>Alta</option>
-                                                                ";
-                                                            }
-                                                        echo"
-                                                            </select>
-                                                            <input type='hidden' name='id_tarea' value='$respuestaTareas[id]'>
-                                                            <input type='hidden' name='id_tablero' value='$id_tablero'>
-                                                            <input type='hidden' name='nombre-tablero' value='$nombre_tablero'>
-                                                            <input type='submit'value='Guardar'>
-                                                        </form>
-                                                    </div>
-                                                    <form action='../backend/remove-task.php' method='post'>
-                                                        <input type='hidden' name='id' value='$respuestaTareas[id]'>
+                                            <div class='tarea' onclick='abrirTarea($j)'> 
+                                                <div class='tarea-title' >
+                                                    <p>$actualTask[titulo]</p>
+                                                </div>     
+                                                <form action='../backend/remove-task.php' method='post'>
+                                                    <input type='hidden' name='id' value='$actualTask[id]'>
+                                                    <input type='hidden' name='id_tablero' value='$id_tablero'>
+                                                    <input type='hidden' name='nombre-tablero' value='$nombre_tablero'>
+                                                    <button class='btn-remove-task'>
+                                                        <i class='bi bi-dash-circle'></i>
+                                                    </button>
+                                                </form>   
+                                            </div>
+                                            <div id='edit-task-$j' class='modal' onMouseDown='enviarForm($j)'>
+                                                <div class='modal-content' onMouseDown='event.stopPropagation()'>
+                                                    <form id='edit-title-task-$j' class='edit-title' action='../backend/edit-task.php' method='post'>
+                                                        <input type='hidden' name='id' value='$actualTask[id]'>
                                                         <input type='hidden' name='id_tablero' value='$id_tablero'>
                                                         <input type='hidden' name='nombre-tablero' value='$nombre_tablero'>
-                                                        <button class='btn-remove-task'>
-                                                            <i class='bi bi-dash-circle'></i>
-                                                        </button>
-                                                    </form>        
+                                                        <div class='modal-header'>
+                                                            <h2 id='title-task-$j' onclick='editarTitulo($j)' class='modal-title'>$actualTask[titulo]</h2>
+                                                            <input id='input-title-task-$j' class='-hidden' onBlur='editarTitulo($j)' type='text' name='titulo' maxlength='50' value='$actualTask[titulo]' placeholder='Ingresar Titulo'>
+                                                            <button class='close' type='submit'>
+                                                                <i class='bi bi-x'></i>
+                                                            </button>
+                                                        </div>
+                                                        <div class='modal-body'>
+                                                            <span>
+                                                                <h4 class='modal-title'>Descripción</h4>
+                                                                <input type='text-area' name='descripcion' maxlength='300' value='$actualTask[descripcion]' placeholder='Ingresar Descripcion'>
+                                                            </span>
+                                                            <span>
+                                                                <h4>Prioridad</h4>
+                                                                <select class='select-priority' name='prioridad'>";
+                                                                if($actualTask['prioridad'] == 1){
+                                                                    echo" 
+                                                                    <option value='1' selected>Baja</option>
+                                                                    <option value='2'>Media</option>
+                                                                    <option value='3'>Alta</option>
+                                                                    ";
+                                                                }else if($actualTask['prioridad'] == 2){
+                                                                    echo "
+                                                                    <option value='1'>Baja</option>
+                                                                    <option value='2' selected>Media</option>
+                                                                    <option value='3'>Alta</option>
+                                                                    ";
+                                                                }else if($actualTask['prioridad'] == 3){
+                                                                    echo "
+                                                                    <option value='1'>Baja</option>
+                                                                    <option value='2'>Media</option>
+                                                                    <option value='3' selected>Alta</option>
+                                                                    ";
+                                                                }
+                                                                echo"
+                                                                </select>
+                                                            </span>
+                                                            <span>
+                                                                <h4>Fecha de creación</h4>
+                                                                <p>$actualTask[fecha_creacion]</p>
+                                                            </span>
+                                                        </div>
+                                                    </form>
                                                 </div>
-                                            ";   
+                                            </div>
+                                        ";   
                                         }
-                                    
+                                        $tasks = []; // Limpiar el arreglo de tareas
                                     }
                                     else{
                                         echo"<p id='no-tasks'>No hay tareas</p>";
@@ -127,10 +151,6 @@
             </form>
         </div>
     </div>
-    <script>
-        document.getElementByClassName("select-priority").addEventListener("change", function() {
-            document.getElementByClassName("form-priority").submit();
-        });
-    </script>
+    <script src="../frontend/js/main.js"></script>
 </body>
 </html>
