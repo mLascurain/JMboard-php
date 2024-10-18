@@ -1,12 +1,10 @@
 const $tareas = document.querySelectorAll(".tarea");
 
 function abrirTarea(index) {
-  setTimeout(function () {
-    const $modal = document.getElementById(`edit-task-${index}`); // Ajuste en el índice
-    if ($modal) {
-      $modal.classList.toggle("-show");
-    }
-  }, 50);
+  const $modal = document.getElementById(`edit-task-${index}`); // Ajuste en el índice
+  if ($modal) {
+    $modal.classList.toggle("-show");
+  }
 }
 
 function enviarForm(index) {

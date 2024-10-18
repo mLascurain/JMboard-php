@@ -86,6 +86,7 @@
   padding: 15px;
   gap: 10px;
   width: 100%;
+  height: auto;
   border-radius: 5px;
   transition: 0.1s;
   border: solid 1px lightgray;
@@ -168,7 +169,7 @@
 }
 
 .tarea-title {
-  width: 100%;
+  width: 85%;
   cursor: pointer;
   overflow-wrap: break-word;
 }
@@ -217,5 +218,3 @@
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
-
