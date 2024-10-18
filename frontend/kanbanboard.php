@@ -53,8 +53,8 @@
                                             $actualTask = mysqli_fetch_assoc($consultaTareas);
     
                                             echo"
-                                            <div class='tarea' onclick='abrirTarea($j)'> 
-                                                <div class='tarea-title' >
+                                            <div class='tarea'> 
+                                                <div class='tarea-title' onclick='abrirTarea($j)'>
                                                     <p>$actualTask[titulo]</p>
                                                 </div>     
                                                 <form action='../backend/remove-task.php' method='post'>
@@ -82,7 +82,7 @@
                                                         <div class='modal-body'>
                                                             <span>
                                                                 <h4 class='modal-title'>Descripción</h4>
-                                                                <input type='text-area' name='descripcion' maxlength='300' value='$actualTask[descripcion]' placeholder='Ingresar Descripcion'>
+                                                                <textarea id='descripcion-task' type='text-area' name='descripcion' maxlength='300' placeholder='Ingresar Descripcion'>$actualTask[descripcion]</textarea>
                                                             </span>
                                                             <span>
                                                                 <h4>Prioridad</h4>
