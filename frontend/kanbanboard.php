@@ -76,7 +76,7 @@
                                             
                                                echo"
                                                 <div class='tarea'> 
-                                                    <div class='tarea-title' onclick='abrirTarea($j)'>
+                                                    <div class='tarea-title' onclick='abrirTarea($j, $i)'>
                                                         <p>$actualTask[titulo]</p>
                                                     </div>     
                                                     <form action='../backend/remove-task.php' method='post'>
@@ -88,15 +88,15 @@
                                                         </button>
                                                     </form>   
                                                 </div>
-                                                <div id='edit-task-$j' class='modal' onMouseDown='enviarForm($j)'>
+                                                <div id='edit-task-$j-$i' class='modal' onMouseDown='enviarForm($j, $i)'>
                                                     <div class='modal-content' onMouseDown='event.stopPropagation()'>
-                                                        <form id='edit-title-task-$j' class='edit-title' action='../backend/edit-task.php' method='post'>
+                                                        <form id='edit-title-task-$j-$i' class='edit-title' action='../backend/edit-task.php' method='post'>
                                                             <input type='hidden' name='id' value='$actualTask[id]'>
                                                             <input type='hidden' name='id_tablero' value='$id_tablero'>
                                                             <input type='hidden' name='nombre-tablero' value='$nombre_tablero'>
                                                             <div class='modal-header'>
-                                                                <h2 id='title-task-$j' onclick='editarTitulo($j)' class='modal-title'>$actualTask[titulo]</h2>
-                                                                <input id='input-title-task-$j' class='-hidden' onBlur='editarTitulo($j)' type='text' name='titulo' maxlength='50' value='$actualTask[titulo]' placeholder='Ingresar Titulo'>
+                                                                <h2 id='title-task-$j-$i' onclick='editarTitulo($j, $i)' class='modal-title'>$actualTask[titulo]</h2>
+                                                                <input id='input-title-task-$j-$i' class='-hidden' onBlur='editarTitulo($j, $i)' type='text' name='titulo' maxlength='50' value='$actualTask[titulo]' placeholder='Ingresar Titulo'>
                                                                 <button class='close' type='submit'>
                                                                     <i class='bi bi-x'></i>
                                                                 </button>
