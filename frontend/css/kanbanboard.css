@@ -26,6 +26,12 @@
   padding: 20px;
   gap: 10px;
 }
+.tarea.dragging {
+  opacity: 1;
+  border: 2px dashed #00bcd4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05); /* Agranda un poco el elemento al arrastrar */
+}
 
 .tableros-list {
   list-style-type: none;
