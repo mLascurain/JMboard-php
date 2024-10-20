@@ -137,6 +137,18 @@
   border: solid 1px lightgray;
 }
 
+.-alta {
+  border-left: solid 4px rgb(167, 0, 0);
+}
+
+.-media {
+  border-left: solid 4px rgb(255, 255, 0);
+}
+
+.-baja {
+  border-left: solid 4px rgb(0, 167, 0);
+}
+
 .tarea:hover {
   border: solid 1px #a355df;
 }

@@ -50,7 +50,7 @@
                 for ($i=0; $i < $resultadoColumnas; $i++) {
                     $respuestaColumnas = mysqli_fetch_assoc($consultaColumnas);
                     $id_columna = $respuestaColumnas['id'];
-                    $consultaTareas = mysqli_query($conexion, "SELECT id, titulo, prioridad,descripcion, columna_id, fecha_creacion FROM tareas WHERE tareas.columna_id = $respuestaColumnas[id]");
+                    $consultaTareas = mysqli_query($conexion, "SELECT id, titulo, prioridad,descripcion, columna_id, fecha_creacion FROM tareas WHERE tareas.columna_id = $respuestaColumnas[id] ORDER BY tareas.prioridad DESC");
                     $resultadoTareas = mysqli_num_rows($consultaTareas);
                     echo"
                        <div class='columna'>
@@ -73,9 +73,15 @@
                                         {
                                             for ($j=0; $j < $resultadoTareas; $j++) {
                                                 $actualTask = mysqli_fetch_assoc($consultaTareas);
-                                            
+                                                if($actualTask['prioridad'] == 1){
+                                                    $prioridad_Actual = '-baja';
+                                                }else if($actualTask['prioridad'] == 2){
+                                                    $prioridad_Actual = '-media';
+                                                }else if($actualTask['prioridad'] == 3){
+                                                    $prioridad_Actual = '-alta';
+                                                }
                                                echo"
-                                                <div class='tarea'id='$actualTask[id]' draggable='true'> 
+                                                <div class='tarea $prioridad_Actual' id='$actualTask[id]' draggable='true'> 
                                                     <div class='tarea-title' onclick='abrirTarea($j, $i)'>
                                                         <p>$actualTask[titulo]</p>
                                                     </div>     
