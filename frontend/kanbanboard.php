@@ -68,14 +68,14 @@
                                     </form>
                                 </span>
                                 <div class='tareas'>
-                                    <div class='tareas-container'>";
+                                    <div class='tareas-container' id='$respuestaColumnas[id]'>";
                                         if($resultadoTareas>0)
                                         {
                                             for ($j=0; $j < $resultadoTareas; $j++) {
                                                 $actualTask = mysqli_fetch_assoc($consultaTareas);
                                             
                                                echo"
-                                                <div class='tarea'> 
+                                                <div class='tarea'id='$actualTask[id]' draggable='true'> 
                                                     <div class='tarea-title' onclick='abrirTarea($j, $i)'>
                                                         <p>$actualTask[titulo]</p>
                                                     </div>     
@@ -176,6 +176,7 @@
         </div>
         </div>
     </div>
+<script src="../frontend/js/drag-and-drop.js"></script>
     <script src="../frontend/js/main.js"></script>
 </body>
 </html>
