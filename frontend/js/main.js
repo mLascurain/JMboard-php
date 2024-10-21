@@ -32,3 +32,16 @@ function editarTitulo(index) {
     }
   }
 }
+
+function invertirTareas(id_columna) {
+  const container = document.getElementById(id_columna); // Obtener el contenedor de las tareas
+  const tareas = Array.from(container.querySelectorAll(".tarea")); // Obtener todas las tareas
+
+  // Invertir el orden de las tareas
+  tareas.reverse();
+
+  // Vaciar el contenedor y reinsertar las tareas en el nuevo orden
+  container.innerHTML = "";
+  tareas.forEach((tarea) => container.appendChild(tarea));
+  console.log("Columna invertida: ", id_columna);
+}

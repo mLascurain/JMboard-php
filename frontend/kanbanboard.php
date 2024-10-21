@@ -56,6 +56,9 @@
                        <div class='columna'>
                                 <span class='titulo-columna'>
                                     <h2>$respuestaColumnas[nombre]</h2>
+                                    <button onclick='invertirTareas($id_columna)' class='btn-invertir'>
+                                        <i class='bi bi-arrows-vertical'></i>
+                                    </button>
                                     <form action='../backend/remove-column.php' method='post'>
                                     <input type='hidden' name='nombre-tablero' value='$nombre_tablero'>
                                     <input type='hidden' name='id' value='$respuestaColumnas[id]'>
@@ -183,6 +186,6 @@
         </div>
     </div>
 <script src="../frontend/js/drag-and-drop.js"></script>
-    <script src="../frontend/js/main.js"></script>
+<script src="../frontend/js/main.js"></script>
 </body>
 </html>
