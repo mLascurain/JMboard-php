@@ -95,10 +95,28 @@
 .titulo-columna {
   width: 100%;
   display: flex;
-  align-items: start;
+  align-items: center;
   padding-bottom: 5px;
   border-bottom: 2px solid rgba(80, 80, 80, 0.4);
   justify-content: space-between;
+}
+
+.titulo-columna i {
+  cursor: pointer;
+  transition: 0.2s;
+  background-color: transparent;
+  color: white;
+}
+.btn-invertir {
+  background-color: transparent;
+  height: 100%;
+  border: none;
+  display: flex;
+  color: white;
+  cursor: pointer;
+  height: 100%;
+  transition: 0.2s;
+  font-size: 20px;
 }
 
 .titulo-columna h2 {
@@ -180,6 +198,8 @@
 .btn-remove-col {
   background-color: transparent;
   border-style: none;
+  display: flex;
+  justify-content: center;
   color: white;
   transition: 0.1s;
 }
