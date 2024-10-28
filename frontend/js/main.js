@@ -9,14 +9,14 @@ function abrirTarea(index_task, index_column) {
   }
 }
 
-function enviarForm(index) {
+function enviarForm(index_task, index_column) {
   const $form = document.getElementById(
     `edit-title-task-${index_task}-${index_column}`
   );
   $form.submit();
 }
 
-function editarTitulo(index) {
+function editarTitulo(index_task, index_column) {
   const $title = document.getElementById(
     `title-task-${index_task}-${index_column}`
   );

@@ -14,7 +14,7 @@
             <nav>
                 <ul>
                     <li><a href="index.php">Home</a></li>
-                    <li><a href="jmboard.php">Quienes Somos</a></li>
+                    <li><a href="../frontend/quienes_somos.php">Quienes Somos</a></li>
                 </ul>
             </nav>
         </div>
