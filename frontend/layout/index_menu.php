@@ -19,5 +19,6 @@
             <img src="imagenes/principal.jpg" alt="imagen principal del sitio">
         </div>
     </section>
+    <?php include("layout/footer.php");?>
 </body>
 </html>

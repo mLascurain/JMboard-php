@@ -13,6 +13,9 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
+textarea {
+  resize: none;
+}
 .principal {
   display: flex;
   justify-content: center;
