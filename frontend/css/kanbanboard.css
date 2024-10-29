@@ -197,7 +197,7 @@
   height: auto;
   border-radius: 5px;
   transition: 0.1s;
-  border: solid 1px lightgray;
+  border: none;
 }
 
 .-alta {
