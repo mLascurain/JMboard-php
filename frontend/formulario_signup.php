@@ -16,10 +16,10 @@
         	<input name="usuario" required type="text" maxlength="30" />
         </label>
         <label>Mail
-        	<input name="email" type="email" maxlength="30" />
+        	<input name="email" required type="email" maxlength="30" />
         </label>
         <label>Contraseña
-        	<input type="password" name="password" minlength="6" maxlength="12" />
+        	<input type="password" required name="password" minlength="6" maxlength="12" />
         </label>
         	<input id="btn-signup" type="submit" value="Registrarse"/>
             <a class="register" href="formulario_login.php">Iniciar Sesion</a>	
