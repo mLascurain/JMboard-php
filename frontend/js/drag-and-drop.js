@@ -72,32 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+const container = document.querySelectorAll(".tareas-container");
+
 function actualizarColumnas() {
-  const columnas = document.querySelectorAll(".columna");
-
-  columnas.forEach((columna) => {
-    const tareasContainer = columna.querySelector(".tareas-container");
-    let noTasksMessage = columna.querySelector("#no-tasks");
-
-    // Si hay tareas, oculta el mensaje "No hay tareas"
-    if (tareasContainer.children.length > 0) {
-      if (noTasksMessage) {
-        noTasksMessage.style.display = "none";
-      }
-    } else {
-      // Si no hay tareas, muestra el mensaje "No hay tareas"
-      if (!noTasksMessage) {
-        // Crear y agregar el mensaje si no existe
-        noTasksMessage = document.createElement("p");
-        noTasksMessage.id = "no-tasks";
-        noTasksMessage.innerText = "No hay tareas";
-        tareasContainer.appendChild(noTasksMessage);
-      } else {
-        noTasksMessage.style.display = "block";
-      }
-    }
-  });
-
   document.addEventListener("DOMContentLoaded", () => {
     const tareas = document.querySelectorAll(".tarea");
 
