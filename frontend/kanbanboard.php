@@ -31,16 +31,18 @@
     ?>
     <div class="board">
         <div class="tablero-aside">
-            <H3 >Tus tableros</H3>
-            <div class="tableros-list">
+            <H3 >Mis Tableros</H3>
+            <div class="tableros">
+                <ul class="list-tableros">
                 <?php
                 for ($k=0; $k < $resultadoTableros; $k++) {
                     $respuestaTableros = mysqli_fetch_assoc($consultaTableros);
                     echo "
-                    <a href='kanbanboard.php?id=$respuestaTableros[id]&name=$respuestaTableros[nombre]'>-$respuestaTableros[nombre]</a>
+                    <a href='kanbanboard.php?id=$respuestaTableros[id]&name=$respuestaTableros[nombre]'><li>$respuestaTableros[nombre]</li></a>
                     ";
                 }
                 ?>
+                </ul>
             </div>
         </div>
         <div class="tablero-main">
@@ -55,10 +57,13 @@
                     echo"
                        <div class='columna'>
                                 <span class='titulo-columna'>
-                                    <h2>$respuestaColumnas[nombre]</h2>
-                                    <button onclick='invertirTareas($id_columna)' class='btn-invertir'>
-                                        <i class='bi bi-arrows-vertical'></i>
-                                    </button>
+                                    <form class='edit-title-column' action='../backend/edit-column.php' method='post'>
+                                        <h2 class='title-col' id='title-col-$i' onClick='editarTituloColumna($i)'>$respuestaColumnas[nombre]</h2>
+                                        <input id='input-title-column-$i' class='-hidden' onBlur='editarTituloColumna($i)' type='text' name='titulo'  maxlength='50' value='$respuestaColumnas[nombre]' placeholder='Ingresar Titulo'>
+                                        <input type='hidden' name='id_tablero' value='$id_tablero'>
+                                        <input type='hidden' name='id' value='$id_columna'>
+                                        <input type='hidden' name='nombre-tablero' value='$nombre_tablero'>                                    
+                                    </form>
                                     <form action='../backend/remove-column.php' method='post'>
                                     <input type='hidden' name='nombre-tablero' value='$nombre_tablero'>
                                     <input type='hidden' name='id' value='$respuestaColumnas[id]'>
@@ -150,10 +155,6 @@
                                                 </div>
                                             ";   
                                             }
-                                            $tasks = []; // Limpiar el arreglo de tareas
-                                        }
-                                        else{
-                                            echo"<p id='no-tasks'>No hay tareas</p>";
                                         }
                                         echo"
                                     </div>

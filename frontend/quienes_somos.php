@@ -25,25 +25,8 @@ include("layout/header.php");?>
             <li><i class="bi bi-duffle"></i> Trabajo</li>
         </ul>
     </div>
-    <div class="imagen">
-        <img class="to-do-img" src="imagenes/to-do.png" alt="Lista To-Do">
-    </div>
 </article>
-<article class="opiniones">
-    <div class="texto-opinion">
-        <h2>Dejanos tu opinion  <i class="bi bi-chat-dots"></i></i></h2>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam soluta harum in, facere sed voluptates repellat culpa eos itaque odio ex quaerat, sint quo ipsa! Repellendus natus voluptate quaerat consequatur minus sunt autem odit assumenda! Optio error, saepe itaque hic perferendis numquam ut adipisci consequatur iure facere fugiat cumque at!</p>
-    </div>
-    <div class="form-opinion">
-        <form action="">
-            <span>
-                <input type="text" required maxlength="30" placeholder="Nombre">
-                <input type="text" required maxlength="30" placeholder="Email">
-            </span>
-            <textarea name="" id="" cols="30" rows="10" required maxlength="300" placeholder="Escribe tu opinion"></textarea>
-            <input class="btn-enviar" type="submit" value="Enviar">
-    </div>
-</article>
+
 <?php
 include("layout/footer.php");?>
 </body>
