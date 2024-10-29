@@ -13,7 +13,7 @@
             <h1>JMboard</h1>
             <nav>
                 <ul>
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="index.php">Inicio</a></li>
                     <li><a href="../frontend/quienes_somos.php">Quienes Somos</a></li>
                     <li><a href="../frontend/opiniones.php">Deja tu Opinion</a></li>
                 </ul>
