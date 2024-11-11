@@ -8,16 +8,47 @@
 </head>
 <body>
     <section class="principal">
-        <article>
-            <h1>JMboard</h1>
-            <p>La mejor herramienta open source para gestionar tus proyectos</p>
-            <span class="principal__buttons">
-                <a href="../frontend/formulario_login.php" target="_blank"><button class="article__button-wn">Iniciar experiencia</button></a>
-            </span>
+        <article class="principal-title">
+            <h2>Organiza tus proyectos con JMBOARD</h2>
+            <h3>El mejor tablero de Kanban</h3>
         </article>
-        <div>
-            <img src="imagenes/principal.jpg" alt="imagen principal del sitio">
-        </div>
+        <article class="principal-content">
+            <div class="principal-text">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem quasi odit debitis nobis, maxime nostrum id adipisci facere, reiciendis et maiores dolorem veniam tempora repellat qui ut! Consequatur consequuntur asperiores in explicabo, tempore nobis at cumque et, sint alias facere?</p>
+            </div>
+            <div class="principal-img">
+                <img src="../frontend/imagenes/principal.jpg" alt="Kanban">
+            </div>
+        </article>
+        <article class="features">
+            <div class="feature">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-clipboard-check" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0"/>
+  <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1z"/>
+  <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0z"/>
+</svg>
+                <h3>Facil Uso</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, temporibus explicabo deleniti dolorem aperiam facere recusandae nostrum a incidunt numquam itaque dolores soluta labore distinctio aut. Quis delectus culpa dolorum!</p>
+            </div>
+            <div class="feature">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-stopwatch" viewBox="0 0 16 16">
+  <path d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5z"/>
+  <path d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64l.012-.013.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5M8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3"/>
+</svg>
+                <h3>Manejo Rapido</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, temporibus explicabo deleniti dolorem aperiam facere recusandae nostrum a incidunt numquam itaque dolores soluta labore distinctio aut. Quis delectus culpa dolorum!</p>
+            </div>
+            <div class="feature">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-bullseye" viewBox="0 0 16 16">
+  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+  <path d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10m0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12"/>
+  <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8"/>
+  <path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
+</svg>
+                <h3>Visualizacion de Objetivos</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, temporibus explicabo deleniti dolorem aperiam facere recusandae nostrum a incidunt numquam itaque dolores soluta labore distinctio aut. Quis delectus culpa dolorum!</p>
+            </div>
+        </article>
     </section>
     <?php include("layout/footer.php");?>
 </body>

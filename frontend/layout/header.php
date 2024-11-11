@@ -10,7 +10,7 @@
 <body>
     <header class="header">
         <div class="nav-bar">
-            <h1>JMboard</h1>
+            <a href="../frontend/index.php"><h1><img src="../frontend/imagenes/logo.png" alt="Logo"></h1></a>
             <nav>
                 <ul>
                     <li><a href="index.php">Inicio</a></li>
