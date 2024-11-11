@@ -1,0 +1,7 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 753 320" width="753" height="320">
+	<title>waveQuienesSomos-svg</title>
+	<style>
+		.s0 { opacity: .6;fill: #8a2be2 } 
+	</style>
+	<path class="s0" d="m-443 96l48 10.7c48 10.3 144 32.3 240 53.3 96 21 192 43 288 53.3 96 10.7 192 10.7 288-21.3 96-32 192-96 288-128 96-32 192-32 240-32h48v288h-48c-48 0-144 0-240 0q-144 0-288 0-144 0-288 0-144 0-288 0c-96 0-192 0-240 0h-48z"/>
+</svg>

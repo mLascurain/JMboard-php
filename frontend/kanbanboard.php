@@ -26,7 +26,7 @@
     
 
     //Consulta de conexion con las tablas
-    $consultaColumnas = mysqli_query($conexion, "SELECT id, nombre, fecha_creacion FROM columnas WHERE columnas.tablero_id = $id_tablero");
+    $consultaColumnas = mysqli_query($conexion, "SELECT id, nombre, fecha_creacion, orden FROM columnas WHERE columnas.tablero_id = $id_tablero");
     $resultadoColumnas = mysqli_num_rows($consultaColumnas);
     ?>
     <div class="board">
@@ -52,7 +52,14 @@
                 for ($i=0; $i < $resultadoColumnas; $i++) {
                     $respuestaColumnas = mysqli_fetch_assoc($consultaColumnas);
                     $id_columna = $respuestaColumnas['id'];
-                    $consultaTareas = mysqli_query($conexion, "SELECT id, titulo, prioridad,descripcion, columna_id, fecha_creacion FROM tareas WHERE tareas.columna_id = $respuestaColumnas[id] ORDER BY tareas.prioridad DESC");
+                    if ($respuestaColumnas['orden'] == 0) {
+                        $consultaTareas = mysqli_query($conexion, "SELECT id, titulo, prioridad,descripcion, columna_id, fecha_creacion FROM tareas WHERE tareas.columna_id = $respuestaColumnas[id] ORDER BY tareas.prioridad DESC");
+                    }
+                    else{
+                        $consultaTareas = mysqli_query($conexion, "SELECT id, titulo, prioridad,descripcion, columna_id, fecha_creacion FROM tareas WHERE tareas.columna_id = $respuestaColumnas[id] ORDER BY tareas.prioridad ASC");
+                    }
+
+                    
                     $resultadoTareas = mysqli_num_rows($consultaTareas);
                     echo"
                        <div class='columna'>

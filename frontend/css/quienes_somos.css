@@ -7,16 +7,26 @@
   --gray-900: #111827;
 }
 
+.quienes-somos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 150px;
+  height: 100%;
+}
+
 .quienes-somos {
   display: flex;
-  align-items: start;
-  justify-content: start;
-  width: 70%;
+  color: var(--gray-900);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
   align-self: center;
   min-height: 400px;
   margin-top: 20px;
-  padding: 20px;
-  gap: 15px;
 }
 
 .texto {
@@ -25,12 +35,16 @@
   align-items: start;
   height: 100%;
   justify-content: start;
-  width: 100%;
+  width: 70%;
+}
+
+.quienes-somos h1 {
+  padding-left: 10px;
 }
 
 .logo {
   display: flex;
-  align-self: center;
+  align-self: start;
   align-items: center;
   justify-content: center;
   width: 50%;
@@ -39,6 +53,7 @@
 }
 
 .parrafo {
+  padding-left: 10px;
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -49,19 +64,64 @@
   margin-bottom: 10px;
 }
 
-.lista-usos {
-  margin-top: 10px;
+.developers {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: start;
-  height: 100%;
-  gap: 5px;
-  justify-content: start;
-  width: 100%;
-  list-style: none;
+  background-color: rgb(138, 43, 226, 0.6);
+  color: var(--gray-900);
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  padding-bottom: 50px;
 }
 
-.lista-usos i {
-  color: #a355df;
-  font-size: 22px;
+.developers-container {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  justify-content: space-around;
+  align-items: start;
+  color: var(--gray-900);
+  height: 100%;
+  gap: 10px;
+}
+
+.developer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.developer p {
+  color: var(--gray-200);
+}
+
+.developer svg {
+  color: var(--gray-200);
+  transition: all 0.15s ease-in-out;
+}
+.github svg:hover {
+  color: var(--purple-hover) !important;
+}
+
+.linkedin svg:hover {
+  color: rgb(65, 109, 255) !important;
+}
+
+.developer img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: solid 5px var(--purple-hover);
+  margin-bottom: 10px;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
