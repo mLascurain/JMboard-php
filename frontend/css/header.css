@@ -7,10 +7,14 @@
   --gray-900: #111827;
 }
 
-.header h1 img{
-  height: 75px;
+.header h1 img {
+  height: 30px;
 }
-
+.header h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .header {
   display: flex;

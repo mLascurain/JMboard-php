@@ -7,30 +7,34 @@
   --gray-900: #111827;
 }
 
+.mensaje {
+  display: flex;
+  align-items: center;
+  background-color: #803e98;
+  justify-content: center;
+  width: fit-content;
+  padding: 25px;
+  align-self: center;
+  height: 100%;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: var(--gray-900);
+}
+
 .opiniones {
   display: flex;
-  width: 70%;
+  width: 100%;
   margin-top: 50px;
   height: 100%;
-  
   align-self: center;
-  justify-content: end;
+  justify-content: center;
   margin-bottom: 50px;
+  gap: 50px;
 }
 
 .texto-opinion {
-  background-color: #1b1b1b;
-  gap: 10px;
-  padding: 20px;
-  display: flex;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  flex-direction: column;
-  align-items: start;
-  justify-content: start;
-  width: 100%;
-  height: 10;
-  min-height: 100%;
+  padding: 30px;
+  width: 25%;
 }
 
 .texto-opinion i {
@@ -39,17 +43,21 @@
 }
 
 .form-opinion {
+  color: var(--gray-900);
   display: flex;
-  background-color: #1b1b1b;
+  background-color: transparent;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
   flex-direction: column;
   align-items: start;
   justify-content: start;
   width: 100%;
   height: 100%;
-  padding: 10px;
+  padding: 25px;
 }
 
 .form-opinion h2 {
+  font-size: 30px;
   margin-bottom: 20px;
 }
 
@@ -65,7 +73,8 @@
 
 .form-opinion input {
   width: 100%;
-  height: fit-content;
+  font-size: 18px;
+  height: 70px;
   padding: 10px;
   border-radius: 5px;
   border: none;
@@ -74,18 +83,21 @@
 
 .form-opinion textarea {
   width: 100%;
-  height: 100px;
+  font-size: 18px;
+  height: 100%;
   padding: 10px;
   border-radius: 5px;
   border: none;
   outline: none;
+  resize: none;
 }
 
 #btn-enviar {
   background-color: #a355df;
   color: white;
-  width: 30%;
+  width: 100%;
   padding: 10px;
+  height: 40px;
   border-radius: 5px;
   border: none;
   cursor: pointer;
@@ -98,17 +110,6 @@
   transform: scale(0.98);
 }
 
-.imagen-opinion {
-  width: 100%;
-}
-
-.imagen {
+.wave {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background-color: #1b1b1b;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
 }

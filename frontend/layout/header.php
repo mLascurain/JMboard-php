@@ -10,7 +10,7 @@
 <body>
     <header class="header">
         <div class="nav-bar">
-            <a href="../frontend/index.php"><h1><img src="../frontend/imagenes/logo.png" alt="Logo"></h1></a>
+            <a href="../frontend/index.php"><h1><img src="../frontend/imagenes/logoBlanco.png" alt="Logo"></h1></a>
             <nav>
                 <ul>
                     <li><a href="index.php">Inicio</a></li>
