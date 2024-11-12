@@ -3,134 +3,160 @@
   --purple-hover: #7a1bd2;
   --gray-100: #f3f4f6;
   --gray-200: #e5e7eb;
-  --gray-500: #6b7280;
-  --gray-900: #111827;
+  --gray-500: #cfcfcf;
+  --gray-900: #9a9a9a;
+}
+body {
+  font-family: "Kanit", sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
 }
 
-.user-name {
-  width: 100%;
-  height: 50px;
-  display: flex;
-  align-items: center;
-}
-
-.table-link {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  text-decoration: none;
-  gap: 10px;
-}
-.create-board-section {
-  margin-top: 10px;
-  width: 100%;
-}
-
-.create-board-section form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 10px;
-}
-
-#name-new-table {
-  background-color: #2a2a2a;
-  border-radius: 4px;
-  border-style: none;
-  color: lightgrey;
-  padding: 5px;
-  width: fit-content;
-}
-
-#btn-new-table {
-  width: fit-content;
-  background-color: #6a0dad;
-  color: white;
-  padding: 12px 24px;
-  font-size: 16px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-#btn-new-table:hover {
-  background-color: #a355df; /* Color púrpura más claro al hacer hover */
-  transform: translateY(-2px);
-}
-
-#btn-new-table:active {
-  background-color: #5a0891;
-  transform: translateY(1px);
+.tablero-empty {
+  margin-top: 20px;
+  color: var(--gray-500);
+  font-size: 25px;
 }
 
 .tablero {
-  margin-top: 50px;
-  width: 90%;
-  justify-self: center;
-  border-radius: 10px;
-  align-self: center;
-  min-height: fit-content;
-  height: auto;
-  background-color: #1b1b1b;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.user-name {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1b1b1b;
+}
+
+.create-board-section {
+  text-align: center;
+  margin-bottom: 40px;
   display: flex;
-  flex-direction: column;
-  outline: 2px solid #a355df;
+  width: 450px;
+  height: 150px;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--gray-200);
+  border-radius: 4px;
+  border: 4px solid var(--gray-500);
+}
+
+.create-board-section form {
+  display: inline-block;
+}
+
+#name-new-table {
   padding: 10px;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+#btn-new-table {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: var(--purple);
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 .tablas {
   display: flex;
-  padding: 10px;
-  margin-top: 30px;
-  gap: 15px;
   flex-wrap: wrap;
-  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
 }
 
-.tabla-container {
-  display: flex;
-  width: 100%;
-  flex-direction: row;
-  min-width: 240px;
-  min-height: 80px;
-  justify-content: space-around;
-  padding: 10px;
-  align-items: center;
-  background-color: #2a2a2a;
-  border-radius: 10px;
-  outline: solid 2px lightgray;
-  transition: 0.2s;
-}
-.tabla-container:hover {
-  transform: scale(1.006);
-  outline: solid 2px #a355df;
+.tablero-container {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
 }
 
-.tabla {
+.tablero-header {
   display: flex;
-  color: white;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
-  text-decoration: dashed;
-  padding: 10px;
-  width: 90%;
-  text-align: start;
-  flex-wrap: wrap;
+  align-items: center;
+  border-bottom: solid 2px var(--gray-500);
+  margin-bottom: 5px;
 }
 
-.btn-delete-tabla {
+.tablero-title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #1b1b1b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tablero-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.tablero-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--purple);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.new-tablero {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: transparent;
-  color: white;
-  border-style: none;
-  cursor: pointer;
-  transition: 0.2s;
+  border: 2px dashed var(--purple);
 }
 
-.btn-delete-tabla:hover {
-  color: red;
+.new-tablero:hover {
+  cursor: pointer;
+}
+
+.new-tablero .tablero-link {
+  background-color: transparent;
+  color: var(--purple);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#dialog {
+  background-color: transparent;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  border: none;
+}
+
+.backdrop {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-delete-tabla {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #dc3545;
+}
+
+.btn-delete-tabla svg {
+  width: 24px;
+  height: 24px;
 }

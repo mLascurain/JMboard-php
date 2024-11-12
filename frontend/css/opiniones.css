@@ -7,25 +7,12 @@
   --gray-900: #111827;
 }
 
-.mensaje {
-  display: flex;
-  align-items: center;
-  background-color: #803e98;
-  justify-content: center;
-  width: fit-content;
-  padding: 25px;
-  align-self: center;
-  height: 100%;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  color: var(--gray-900);
-}
-
 .opiniones {
+  font-family: "Kanit", sans-serif;
   display: flex;
   width: 100%;
   margin-top: 50px;
-  height: 100%;
+  height: 600px;
   align-self: center;
   justify-content: center;
   margin-bottom: 50px;
@@ -52,7 +39,7 @@
   align-items: start;
   justify-content: start;
   width: 100%;
-  height: 100%;
+  height: fit-content;
   padding: 25px;
 }
 
@@ -72,6 +59,7 @@
 }
 
 .form-opinion input {
+  font-family: "Kanit", sans-serif;
   width: 100%;
   font-size: 18px;
   height: 70px;
@@ -83,6 +71,7 @@
 
 .form-opinion textarea {
   width: 100%;
+  font-family: "Kanit", sans-serif;
   font-size: 18px;
   height: 100%;
   padding: 10px;
@@ -93,21 +82,47 @@
 }
 
 #btn-enviar {
-  background-color: #a355df;
-  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  padding: 10px;
   height: 40px;
   border-radius: 5px;
+  background-color: #a355df;
+  color: white;
   border: none;
   cursor: pointer;
   transition: 0.3s ease;
+  text-align: center;
 }
 
 #btn-enviar:hover {
   background-color: #803e98;
   transition: 0.2s ease;
   transform: scale(0.98);
+}
+
+.popup {
+  display: none;
+  height: 100%;
+  align-items: center;
+  background-color: var(--gray-200);
+  border-radius: 5px;
+  justify-content: center;
+  align-self: center;
+  width: fit-content;
+  margin-top: 20px;
+  padding: 25px;
+  color: var(--purple);
+  transition: all 0.5s ease;
+
+  @starting-style {
+    transform: scale(0.2);
+  }
+}
+
+.mensaje {
+  display: flex !important;
 }
 
 .wave {
