@@ -40,6 +40,7 @@
 
 .quienes-somos h1 {
   padding-left: 10px;
+  font-size: 40px;
 }
 
 .logo {
@@ -53,6 +54,7 @@
 }
 
 .parrafo {
+  font-size: 30px;
   padding-left: 10px;
   display: flex;
   flex-direction: column;
@@ -73,7 +75,11 @@
   align-items: center;
   justify-content: center;
   gap: 40px;
-  padding-bottom: 50px;
+  padding-bottom: 250px;
+}
+
+.developers h2 {
+  font-size: 40px;
 }
 
 .developers-container {
@@ -98,6 +104,7 @@
 
 .developer p {
   color: var(--gray-200);
+  width: 40%;
 }
 
 .developer svg {

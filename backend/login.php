@@ -1,15 +1,4 @@
 <?php session_start();?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <link rel="stylesheet" href="../frontend/css/style.css">
-    <link rel="stylesheet" href="../frontend/css/header.css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
 <?php 
 
  $email=$_POST['email'];
@@ -31,14 +20,12 @@
       header("location:../frontend/index.php");
       }
       else{
-         $_SESSION['error'] = "Contraseña incorrecta.";
+         $_SESSION['errorPassword'] = "Contraseña incorrecta.";
          mysqli_free_result($consulta);
          header("location:../frontend/formulario_login.php");
       }
    }else{
-    $_SESSION['error'] = "E-mail incorrecto.";
+    $_SESSION['errorEmail'] = "E-mail incorrecto.";
     mysqli_free_result($consulta);
     header("location:../frontend/formulario_login.php");
  }?>
-</body>
-</html>

@@ -8,13 +8,14 @@
 }
 
 .article-form-login {
+  font-family: "Kanit", sans-serif;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 10px;
-  height: 600px;
+  height: fit-content;
 }
 
 .div-form-login {
@@ -23,17 +24,18 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 800px;
+  height: 100%;
 }
 
 .article-form-signup {
+  margin-top: 20px;
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 10px;
-  height: 600px;
+  height: fit-content;
 }
 
 .title-form {
@@ -42,59 +44,79 @@
 }
 
 .form-login {
-  background-color: #1b1b1b;
+  margin-top: 20px;
+  background-color: var(--gray-200);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  margin: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
   border: 2px solid #a355bf;
   justify-content: center;
-  width: 300px;
-  min-height: 400px;
-  max-height: 700px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  height: fit-content;
   padding: 20px;
+  color: var(--gray-900);
+}
+
+.form-login h4 {
+  color: var(--gray-500);
+  font-weight: 400;
 }
 
 .form-login label {
   font-weight: 700;
   display: flex;
-  flex-direction: column;
-  align-items: start;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
   width: 100%;
-  gap:5px;
+  gap: 5px;
+}
+
+.error {
+  color: red;
+  display: flex;
+  font-weight: 400;
+  font-size: 12px;
+  transition: all 0.2s ease;
+  display: none;
+  @starting-style {
+    transform: scale(0);
+  }
+}
+
+.-show {
+  display: flex !important;
 }
 
 .form-login input {
   width: 100%;
   height: 40px;
-  color:white;
-  background-color: #2a2a2a;
-  border: 1px solid grey;
+  color: var(--gray-900);
+  background-color: var(--gray-200);
+  border: 1px solid rgba(128, 128, 128, 0.466);
   margin-bottom: 20px;
   cursor: pointer;
   padding: 15px;
   font-weight: 500;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.form-login input:focus{
-  border:2px solid #a355bf;
+.form-login input:focus {
+  border: 2px solid #a355bf;
 }
 
 .form-login a {
   text-decoration: none;
   font-weight: 700;
   transition: 0.2s;
-}
-.form-login a:hover{
   color: #a355bf;
 }
-
+.form-login a:hover {
+  color: var(--purple-hover);
+}
 
 .form-login input:focus {
   outline: none;
@@ -148,4 +170,9 @@
   padding: 10px 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+.wave {
+  display: flex;
+  width: 100%;
 }

@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title>JMboard</title>
+    <link rel="icon" href="../frontend/imagenes/ico.png">
 </head>
 <body>
     <section class="principal">
@@ -39,7 +40,7 @@
   <path d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64l.012-.013.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5M8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3"/>
 </svg>
                 <h3>Manejo Rapido</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, temporibus explicabo deleniti dolorem aperiam facere recusandae nostrum a incidunt numquam itaque dolores soluta labore distinctio aut. Quis delectus culpa dolorum!</p>
+                <p>Con JMboard organiza tareas al instante, actualiza el estado de proyectos en segundos y gestiona equipos de forma ágil para maximizar productividad y eficiencia.</p>
             </div>
             <div class="feature">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bullseye" viewBox="0 0 16 16">
@@ -49,7 +50,7 @@
   <path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0"/>
 </svg>
                 <h3>Visualizacion de Objetivos</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eos, temporibus explicabo deleniti dolorem aperiam facere recusandae nostrum a incidunt numquam itaque dolores soluta labore distinctio aut. Quis delectus culpa dolorum!</p>
+                <p>Mboard permite organizar tareas visualmente, mejora la colaboración en equipo, optimiza el flujo de trabajo, aumenta la productividad y ofrece un seguimiento claro de proyectos.</p>
             </div>
         </article>
     </section>

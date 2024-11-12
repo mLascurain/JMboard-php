@@ -1,4 +1,10 @@
-<?php session_start();?>
+<?php
+    session_start();
+    include("../backend/conexion.php");
+    $id_usuario = $_SESSION['id'];
+    $id_tablero = $_GET['id'];
+    $nombre_tablero = $_GET['name']; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,26 +13,36 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/kanbanboard.css">
     <link rel="stylesheet" href="css/modal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title><?php echo $nombre_tablero ?></title>
+    <link rel="icon" href="../frontend/imagenes/ico.png">
 </head>
 <body>
     <?php include("layout/header.php");?>
     <?php
-    include("../backend/conexion.php");
-    $id_usuario = $_SESSION['id'];
-    $id_tablero = $_GET['id']; //Obtiene el id del tablero
-    $nombre_tablero = $_GET['name']; //Obtiene el nombre del tablero
-    $tasks = array(); //Se genera un Array para almacenar las tareas
     
+    
+    
+    if (!isset($_SESSION['logeado'])) {
+        $_SESSION['error_not_login'] = "Debes iniciar sesion.";
+        header("location:../frontend/formulario_login.php");
+    }
 
-    //Obtiene el nombre del tablero
+    $verificaPropiedad = mysqli_query($conexion, "SELECT id, nombre FROM tableros WHERE id = $id_tablero AND usuario_id = $id_usuario");
+    if (mysqli_num_rows($verificaPropiedad) == 0) {
+    $_SESSION['error_access_denied'] = "No tienes permiso para acceder a este tablero.";
+    header("location:../frontend/index.php");
+    }
+   
+
     $consultaTableros = mysqli_query($conexion, "SELECT id, nombre FROM tableros WHERE usuario_id = $id_usuario");
     $resultadoTableros = mysqli_num_rows($consultaTableros);
     
 
-    //Consulta de conexion con las tablas
-    $consultaColumnas = mysqli_query($conexion, "SELECT id, nombre, fecha_creacion, orden FROM columnas WHERE columnas.tablero_id = $id_tablero");
+    $consultaColumnas = mysqli_query($conexion, "SELECT id, nombre, fecha_creacion, orden , tablero_id FROM columnas WHERE columnas.tablero_id = $id_tablero");
     $resultadoColumnas = mysqli_num_rows($consultaColumnas);
     ?>
     <div class="board">
@@ -173,7 +189,7 @@
                                             <input type="hidden" name="id-columna" value="<?php echo $id_columna; ?>">
                                             <input type="hidden" name="nombre-tablero" value="<?php echo $nombre_tablero; ?>">
                                             <input type="hidden" name="id-tablero" value="<?php echo $id_tablero; ?>">
-                                            <input id="btn-new-task" type='submit' value='+'>
+                                            <input id="btn-new-task" type='submit' value='Agregar'>
                                         </form>
                                     </div>
                                 <?php
@@ -187,7 +203,7 @@
                     <input id="name-new-column" name="add-column" placeholder="Titulo de la columna" required type="text" maxlength="30" />
                     <input type="hidden" name="nombre-tablero" value="<?php echo $nombre_tablero; ?>">
                     <input type="hidden" name="id_tablero" value="<?php echo $id_tablero; ?>">
-                    <input id="btn-new-column" type='submit' value='+'>
+                    <input id="btn-new-column" type='submit' value='Agregar'>
                 </form>
             </div>
         </div>
