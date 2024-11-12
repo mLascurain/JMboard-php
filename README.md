@@ -53,8 +53,6 @@ https://github.com/user-attachments/assets/e11d0fc1-70c2-43a9-be27-3f361bd3016c
 - **Session Management**: To ensure secure access and user authentication.
 
 
-<strong> Currently in active development.</strong>
-
 > [!TIP]  
 > If you want to support the project you can give a star to the repository, we would appreciate it ;)
 
