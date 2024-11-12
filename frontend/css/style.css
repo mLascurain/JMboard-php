@@ -22,6 +22,13 @@ body {
   background-color: var(--gray-100);
 }
 
+#drag-and-drop {
+  width: 60%;
+  align-self: center;
+  border-radius: 10px;
+  margin-bottom: 40px;
+}
+
 .principal {
   display: flex;
   width: 100%;
@@ -97,6 +104,7 @@ body {
   flex-direction: row;
   text-align: start;
   gap: 50px;
+  margin-top: 10px;
   justify-content: space-around;
   width: 100%;
   padding: 50px;
