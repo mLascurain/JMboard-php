@@ -17,7 +17,6 @@
                 <div class="principal-text">
                     <img src="../frontend/imagenes/logoB&W.png" alt="">
                     <H2>Organiza tu vida de una forma sencilla</H2>
-                    <p>JMBOARD es una herramienta de gestion de proyectos que te ayuda a organizar tu vida de una forma sencilla</p>
                 </div>
                 <div class="principal-img">
                     <img src="../frontend/imagenes/principal3.png" alt="Kanban">
@@ -54,6 +53,7 @@
             </div>
         </article>
     </section>
-    <?php include("layout/footer.php");?>
+    <img id="drag-and-drop" src="../frontend/imagenes/drag-and-drop.gif" alt="Drag and drop gif">
+    <?php include 'footer.php'; ?>
 </body>
 </html>
