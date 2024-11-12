@@ -2,9 +2,10 @@
 
 App to organize tasks
 
-![logoBlanco](https://github.com/user-attachments/assets/3c1e1900-fa9c-4e69-8a77-1a4add240ad2)
+![logoBlancoFINAL](https://github.com/user-attachments/assets/b7073ee0-54c9-44a3-bdb5-4a079825ce3a)
 
-https://github.com/user-attachments/assets/c1228058-8908-4fba-9952-adac21220de0
+https://github.com/user-attachments/assets/e11d0fc1-70c2-43a9-be27-3f361bd3016c
+
 
 
 # About
