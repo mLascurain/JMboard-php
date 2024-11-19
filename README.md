@@ -37,7 +37,7 @@ https://github.com/user-attachments/assets/e11d0fc1-70c2-43a9-be27-3f361bd3016c
 **Jmboard** is a task management platform designed to help users create, organize, and manage tasks efficiently. It includes features such as:
 
 - **Customizable columns**: Users can define columns to group tasks.
-- **Visibility options**: Change tasks status for proproty levels.
+- **Visibility options**: Change tasks status for priority levels.
 - **Drag and drop functionality**: Easily move tasks between columns.
 - **Column and task management**: Create, edit, and delete columns and tasks within a board.
 
