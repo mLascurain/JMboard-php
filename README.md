@@ -30,6 +30,9 @@ App to organize tasks
 
 https://github.com/user-attachments/assets/e11d0fc1-70c2-43a9-be27-3f361bd3016c
 
+> [!NOTE]  
+> Video showing the app
+> https://www.youtube.com/watch?v=VNNv3boKw4Q
 
 
 # About
