@@ -6,26 +6,26 @@
     <title>JMboard</title>
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="icon" href="../frontend/imagenes/ico.png">
+    <link rel="icon" href="imagenes/ico.png">
 </head>
 <body>
     <header class="header">
         <div class="nav-bar">
-            <a href="../frontend/index.php"><h1><img src="../frontend/imagenes/logoBlanco.png" alt="Logo"></h1></a>
+            <a href="index.php"><h1><img src="imagenes\logoBlanco.png" alt="Logo"></h1></a>
             <nav>
                 <ul>
                     <li><a href="index.php">Inicio</a></li>
-                    <li><a href="../frontend/quienes_somos.php">Quienes Somos</a></li>
-                    <li><a href="../frontend/opiniones.php">Deja tu Opinion</a></li>
+                    <li><a href="quienes_somos.php">Quienes Somos</a></li>
+                    <li><a href="opiniones.php">Deja tu Opinion</a></li>
                 </ul>
             </nav>
         </div>
         <div class="login">
             <?php if (isset($_SESSION['logeado']) && ($_SESSION['logeado'])==true): ?>
-                <a href="../backend/logout.php">Cerrar Sesion</a>
+                <a href="backend/logout.php">Cerrar Sesion</a>
                 <i class="bi bi-person-circle"></i>
             <?php else: ?>
-                <a href="../frontend/formulario_login.php">Iniciar Sesion</a>
+                <a href="formulario_login.php">Iniciar Sesion</a>
                 <i class="bi bi-person-circle"></i>
             <?php endif; ?>
         </div>

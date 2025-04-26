@@ -8,7 +8,7 @@ $nombre_tablero = $_POST['nombre-tablero'];
 $id_tablero = $_POST['id_tablero'];
 $consulta = mysqli_query($conexion, "UPDATE columnas SET nombre = '$nombre' WHERE id = $id");
 
-header("Location: ../frontend/kanbanboard.php?id=$id_tablero&name=$nombre_tablero");
+header("Location:../kanbanboard.php?id=$id_tablero&name=$nombre_tablero");
 
 mysqli_close($conexion);
 

@@ -14,7 +14,7 @@ include("../backend/conexion.php");
 
 $consulta = mysqli_query($conexion, "UPDATE tareas SET titulo = '$titulo', descripcion = '$descripcion', prioridad = '$prioridad' WHERE id = $id");
 
-header("Location: ../frontend/kanbanboard.php?id=$id_tablero&name=$nombre_tablero");
+header("Location: ../kanbanboard.php?id=$id_tablero&name=$nombre_tablero");
 
 mysqli_close($conexion);
 

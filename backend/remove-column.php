@@ -25,7 +25,7 @@ mysqli_query($conexion, $consulta);
 
 // Redirigir a index.php
 $id_tablero = $_POST['id_tablero'];
-header("Location: ../frontend/kanbanboard.php?id=$id_tablero&name=$nombre_tablero");
+header("Location: ../kanbanboard.php?id=$id_tablero&name=$nombre_tablero");
 mysqli_close($conexion); // Cierra la conexión con la base de datos
 exit;
 ?>

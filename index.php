@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JMboard</title>
-    <link rel="icon" href="../frontend/imagenes/ico.png">
+    <link rel="icon" href="imagenes/ico.png">
 </head>
 <body>
     <?php 

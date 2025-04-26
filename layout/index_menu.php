@@ -15,11 +15,11 @@
         <article class="principal-head">
             <div class="principal-content">
                 <div class="principal-text">
-                    <img src="../frontend/imagenes/logoB&W.png" alt="">
+                    <img src="imagenes\logoB&W.png" alt="">
                     <H2>Organiza tu vida de una forma sencilla</H2>
                 </div>
                 <div class="principal-img">
-                    <img src="../frontend/imagenes/principal3.png" alt="Kanban">
+                    <img src="imagenes\principal3.png" alt="Kanban">
                 </div>
             </div>
         </article>
@@ -53,7 +53,7 @@
             </div>
         </article>
     </section>
-    <img id="drag-and-drop" src="../frontend/imagenes/drag-and-drop.gif" alt="Drag and drop gif">
+    <img id="drag-and-drop" src="imagenes\drag-and-drop.gif" alt="Drag and drop gif">
     <?php include 'footer.php'; ?>
 </body>
 </html>

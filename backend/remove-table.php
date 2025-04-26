@@ -36,7 +36,7 @@ $consulta = "DELETE FROM tableros WHERE id = '$id_tablero'";
 mysqli_query($conexion, $consulta);
 
 // Redirigir a index.php
-header("Location: ../frontend/index.php");
+header("Location: ../index.php");
 mysqli_close($conexion); // Cierra la conexión con la base de datos
 exit;
 ?>

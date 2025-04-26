@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deja tu Opinion</title>
-    <link rel="icon" href="../frontend/imagenes/ico.png">
+    <link rel="icon" href="imagenes/ico.png">
 </head>
 <body>
     <?php
@@ -22,7 +22,7 @@
         <div class="texto-opinion">
             <div class="form-opinion">
                 <h2>Dejanos tu opinion  <i class="bi bi-chat-dots"></i></i></h2>
-                <form action="../backend/envio-opinion.php" method="post">
+                <form action="backend/envio-opinion.php" method="post">
                     <input name="name" type="text" required maxlength="30" placeholder="Nombre">
                     <input name="email" type="email" required maxlength="30" placeholder="Email">
                     <textarea name="opinion"  cols="30" rows="10" required maxlength="300" placeholder="Escribe tu opinion"></textarea>

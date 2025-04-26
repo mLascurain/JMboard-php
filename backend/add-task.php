@@ -15,5 +15,5 @@ $fechaActual = new DateTime();
 $fechaFormateada = $fechaActual->format('Y-m-d');
 
 $consulta = mysqli_query($conexion, "INSERT INTO tareas ( titulo, descripcion, columna_id, prioridad, fecha_creacion ) VALUES ( '$titulo', '', '$columna_id', '1', '$fechaFormateada')");
-header("location:../frontend/kanbanboard.php?id=$id_tablero&name=$nombre_tablero");
+header("location:../kanbanboard.php?id=$id_tablero&name=$nombre_tablero");
 ?>

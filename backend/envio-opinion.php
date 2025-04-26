@@ -9,5 +9,5 @@ $opinion = $_POST['opinion'];
 $_SESSION['opinionEnviada'] = "Gracias por dejar tu Opinion!";
 $consulta = mysqli_query($conexion, "INSERT INTO opiniones (nombre_usuario, email_usuario, opinion) VALUES ('$email', '$name', '$opinion')");
 
-header("Location: ../frontend/opiniones.php");
+header("Location:../opiniones.php");
 ?>

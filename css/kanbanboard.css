@@ -99,7 +99,8 @@ body {
 }
 
 .columnas {
-  width: 100%;
+  max-width: calc(100vw - 250px);
+  min-width: 100%;
   min-height: 60vh;
   height: 100%;
   align-self: center;

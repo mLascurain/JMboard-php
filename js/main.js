@@ -13,6 +13,7 @@ function enviarForm(index_task, index_column) {
   const $form = document.getElementById(
     `edit-title-task-${index_task}-${index_column}`
   );
+
   $form.submit();
 }
 
@@ -46,3 +47,21 @@ function editarTituloColumna(index) {
     }
   }
 }
+
+//Save ScrollBar
+window.onload = function () {
+  const scrollPosX = localStorage.getItem("scrollPosX");
+  let columnas = document.getElementById("columnas");
+  if (scrollPosX != null) {
+    columnas.scrollLeft = scrollPosX;
+  } else {
+    columnas.scrollLeft = columnas.scrollWidth - columnas.clientWidth;
+  }
+};
+
+const scrollBar = document.getElementById("columnas");
+
+scrollBar.addEventListener("scroll", function () {
+  let scrollHorizontal = scrollBar.scrollLeft;
+  localStorage.setItem("scrollPosX", scrollHorizontal);
+});

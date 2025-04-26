@@ -10,12 +10,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
-    <link rel="icon" href="../frontend/imagenes/ico.png">
+    <link rel="icon" href="imagenes/ico.png">
 </head>
 <body>
     <article class="article-form-signup">
         <a href="index.php"><img src="imagenes/logoBlack.png" alt="Logo"></a>
-        <form action="../backend/signup.php" method="post" class="form-login">
+        <form action="backend\signup.php" method="post" class="form-login">
             <h2>Registrate</h2>
             <h4>Ingresa tus credenciales para registrarte</h4>
             <label>

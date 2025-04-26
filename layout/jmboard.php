@@ -9,10 +9,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Tableros</title>
-    <link rel="icon" href="../frontend/imagenes/ico.png">
+    <link rel="icon" href="imagenes/ico.png">
 </head>
 <body>
-    <?php include("../backend/conexion.php"); ?>
+    <?php include("backend/conexion.php"); ?>
     <article class="tablero">
         <section class="user-name">
             <h2>Hola <?php echo $_SESSION['usuario']; ?>!</h2>
@@ -33,7 +33,7 @@
                     <div class='tablero-container'>
                         <div class='tablero-header'>
                             <h3 class='tablero-title'>$respuesta[nombre]</h3>
-                            <form action='../backend/remove-table.php' method='post' class='delete-form'>
+                            <form action='backend/remove-table.php' method='post' class='delete-form'>
                                 <input type='hidden' name='id' value='$respuesta[id]'>
                                 <button class='btn-delete-tabla' type='submit'>
                                     <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='currentColor' class='bi bi-trash3' viewBox='0 0 16 16'>
@@ -43,7 +43,7 @@
                             </form>
                         </div>
                         <p class='tablero-description'>Fecha: $respuesta[fecha_creacion]</p>
-                        <a class='tablero-link' href='../frontend/kanbanboard.php?id=$respuesta[id]&name=$respuesta[nombre]'>Abrir Tablero</a>
+                        <a class='tablero-link' href='kanbanboard.php?id=$respuesta[id]&name=$respuesta[nombre]'>Abrir Tablero</a>
                     </div>";
                 }
             ?>
@@ -51,16 +51,18 @@
         </section>
         <?php if ($resultado==0){echo "<p class='tablero-empty'>No hay tableros creados</p>"; }?>
     </article>
+
     <dialog id="dialog">
         <div class='backdrop'>
             <div class="create-board-section">
-                <form action="../backend/tablero.php" method="post">
+                <form action="backend/tablero.php" method="post">
                     <input id="name-new-table" required name="nombre" placeholder="Nombre del tablero" type="text" maxlength="30" />
                     <input id="btn-new-table" type="submit" value="+ Crear Tablero"/>
                 </form>
             </div>
         </div>
     </dialog>
+
     <script>
         const modal = document.querySelector("#dialog");
         const btn = document.querySelector(".button-new-table");

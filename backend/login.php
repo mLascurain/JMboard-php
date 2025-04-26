@@ -17,15 +17,15 @@
       $_SESSION['logeado']=true;
       $_SESSION['id']=$respuesta['id'];
       mysqli_free_result($consulta);
-      header("location:../frontend/index.php");
+      header("location:../index.php");
       }
       else{
          $_SESSION['errorPassword'] = "Contraseña incorrecta.";
          mysqli_free_result($consulta);
-         header("location:../frontend/formulario_login.php");
+         header("location:../formulario_login.php");
       }
    }else{
     $_SESSION['errorEmail'] = "E-mail incorrecto.";
     mysqli_free_result($consulta);
-    header("location:../frontend/formulario_login.php");
+    header("location:../formulario_login.php");
  }?>

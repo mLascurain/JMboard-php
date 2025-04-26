@@ -12,15 +12,15 @@
     <article class="footer">
         <div class="container">
             <div class="footer-brand">
-                <h2><img src="../frontend/imagenes/logoBlanco.png" alt=""></h2>
+                <h2><img src="imagenes\logoBlanco.png" alt=""></h2>
                 <p>Copyright 2023 JMBOARD</p>
                 <p>Todos los derechos reservados</p>
             </div>
             <div class="footer-nav">
                 <ul>
-                    <li><a href="../frontend/index.php">Inicio</a></li>
-                    <li><a href="../frontend/quienes_somos.php">Quienes Somos</a></li>
-                    <li><a href="../frontend/opiniones.php">Deja tu opinión</a></li>
+                    <li><a href="index.php">Inicio</a></li>
+                    <li><a href="quienes_somos.php">Quienes Somos</a></li>
+                    <li><a href="opiniones.php">Deja tu opinión</a></li>
                 </ul>
             </div>
             <div class="footer-social">

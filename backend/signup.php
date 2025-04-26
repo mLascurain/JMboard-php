@@ -21,11 +21,11 @@
     $_SESSION['id']=$respuesta['id'];
     $_SESSION['logeado']=true;
     mysqli_free_result($consulta);
-    header("location:../frontend/index.php");
+    header("location:../index.php");
  }else{
     $_SESSION['error'] = "E-mail ya registrado.";
     mysqli_free_result($consulta);
-    header("location:../frontend/formulario_signup.php");
+    header("location:../formulario_signup.php");
  }?>
 
     

@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesion</title>
-    <link rel="icon" href="../frontend/imagenes/ico.png">
+    <link rel="icon" href="imagenes/ico.png">
 </head>
 <body>
     <article class="article-form-login">
@@ -20,7 +20,7 @@
                 <p class="error"> <?php echo $_SESSION['error_not_login']; ?> </p>
                 <?php unset($_SESSION['error_not_login']); ?>
             <?php endif; ?>
-            <form action="../backend/login.php" method="post" class="form-login">
+            <form action="backend/login.php" method="post" class="form-login">
                 <h2>Iniciar Sesion</h2>
                 <h4>Ingresa tus credenciales para acceder</h4>
                 <label>E-mail 

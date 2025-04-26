@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include("../backend/conexion.php");
+    include("backend/conexion.php");
     $id_usuario = $_SESSION['id'];
     $id_tablero = $_GET['id'];
     $nombre_tablero = $_GET['name']; 
@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $nombre_tablero ?></title>
-    <link rel="icon" href="../frontend/imagenes/ico.png">
+    <link rel="icon" href="imagenes/ico.png">
 </head>
 <body>
     <?php include("layout/header.php");?>
@@ -28,13 +28,13 @@
     
     if (!isset($_SESSION['logeado'])) {
         $_SESSION['error_not_login'] = "Debes iniciar sesion.";
-        header("location:../frontend/formulario_login.php");
+        header("location:formulario_login.php");
     }
 
     $verificaPropiedad = mysqli_query($conexion, "SELECT id, nombre FROM tableros WHERE id = $id_tablero AND usuario_id = $id_usuario");
     if (mysqli_num_rows($verificaPropiedad) == 0) {
     $_SESSION['error_access_denied'] = "No tienes permiso para acceder a este tablero.";
-    header("location:../frontend/index.php");
+    header("location:index.php");
     }
    
 
@@ -63,7 +63,7 @@
         </div>
         <div class="tablero-main">
         <H1 class='title-board'><?php echo $nombre_tablero ?></H1>
-        <div class='columnas'>
+        <div class='columnas' id= 'columnas'>
             <?php
                 for ($i=0; $i < $resultadoColumnas; $i++) {
                     $respuestaColumnas = mysqli_fetch_assoc($consultaColumnas);
@@ -80,14 +80,14 @@
                     echo"
                        <div class='columna'>
                                 <span class='titulo-columna'>
-                                    <form class='edit-title-column' action='../backend/edit-column.php' method='post'>
+                                    <form class='edit-title-column' action='backend/edit-column.php' method='post'>
                                         <h2 class='title-col' id='title-col-$i' onClick='editarTituloColumna($i)'>$respuestaColumnas[nombre]</h2>
                                         <input id='input-title-column-$i' class='-hidden' onBlur='editarTituloColumna($i)' type='text' name='titulo'  maxlength='50' value='$respuestaColumnas[nombre]' placeholder='Ingresar Titulo'>
                                         <input type='hidden' name='id_tablero' value='$id_tablero'>
                                         <input type='hidden' name='id' value='$id_columna'>
                                         <input type='hidden' name='nombre-tablero' value='$nombre_tablero'>                                    
                                     </form>
-                                    <form action='../backend/remove-column.php' method='post'>
+                                    <form action='backend/remove-column.php' method='post'>
                                     <input type='hidden' name='nombre-tablero' value='$nombre_tablero'>
                                     <input type='hidden' name='id' value='$respuestaColumnas[id]'>
                                     <input type='hidden' name='id_tablero' value='$id_tablero'>
@@ -116,7 +116,7 @@
                                                     <div class='tarea-title' onclick='abrirTarea($j, $i)'>
                                                         <p>$actualTask[titulo]</p>
                                                     </div>     
-                                                    <form action='../backend/remove-task.php' method='post'>
+                                                    <form action='backend/remove-task.php' method='post'>
                                                         <input type='hidden' name='id' value='$actualTask[id]'>
                                                         <input type='hidden' name='id_tablero' value='$id_tablero'>
                                                         <input type='hidden' name='nombre-tablero' value='$nombre_tablero'>
@@ -127,7 +127,7 @@
                                                 </div>
                                                 <div id='edit-task-$j-$i' class='modal' onMouseDown='enviarForm($j, $i)'>
                                                     <div class='modal-content' onMouseDown='event.stopPropagation()'>
-                                                        <form id='edit-title-task-$j-$i' class='edit-title' action='../backend/edit-task.php' method='post'>
+                                                        <form id='edit-title-task-$j-$i' class='edit-title' action='backend/edit-task.php' method='post'>
                                                             <input type='hidden' name='id' value='$actualTask[id]'>
                                                             <input type='hidden' name='id_tablero' value='$id_tablero'>
                                                             <input type='hidden' name='nombre-tablero' value='$nombre_tablero'>
@@ -184,7 +184,7 @@
                                 </div>";
                                 ?>
                                     <div class='add-task'>
-                                        <form action='../backend/add-task.php' method='post'>
+                                        <form action='backend/add-task.php' method='post'>
                                             <input id="name-new-task" name="add-task" placeholder="Titulo de la tarea" type="text" maxlength="30" />
                                             <input type="hidden" name="id-columna" value="<?php echo $id_columna; ?>">
                                             <input type="hidden" name="nombre-tablero" value="<?php echo $nombre_tablero; ?>">
@@ -199,7 +199,7 @@
                 }
             ?>
             <div class='add-column'>
-                <form action='../backend/add-column.php' method='post'>
+                <form action='backend/add-column.php' method='post'>
                     <input id="name-new-column" name="add-column" placeholder="Titulo de la columna" required type="text" maxlength="30" />
                     <input type="hidden" name="nombre-tablero" value="<?php echo $nombre_tablero; ?>">
                     <input type="hidden" name="id_tablero" value="<?php echo $id_tablero; ?>">
@@ -209,7 +209,7 @@
         </div>
         </div>
     </div>
-<script src="../frontend/js/drag-and-drop.js"></script>
-<script src="../frontend/js/main.js"></script>
+<script src="js/drag-and-drop.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
